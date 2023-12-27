@@ -2,3 +2,9 @@ baseURL = 'https://xenokrat.github.io/'
 languageCode = 'ru-ru'
 title = 'Мой блог про IT, ML и прочее'
 theme = 'beautifulhugo'
+
+summaryLength = 30
+
+[author] 
+  name = "Павел Барабанов"
+  github = "https://github.com/Xenokrat"
