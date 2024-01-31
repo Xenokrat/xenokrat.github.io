@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Мой блог про IT, ML и прочее</title>
+    <link>https://xenokrat.github.io/posts/</link>
+    <description>Recent content in Posts on Мой блог про IT, ML и прочее</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 27 Dec 2023 21:10:23 +0300</lastBuildDate>
+    <atom:link href="https://xenokrat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Менее известные особенности Clickhouse. Часть 1</title>
+      <link>https://xenokrat.github.io/posts/clickhouse-tricks-1/</link>
+      <pubDate>Wed, 27 Dec 2023 21:10:23 +0300</pubDate>
+      <guid>https://xenokrat.github.io/posts/clickhouse-tricks-1/</guid>
+      <description>Менее известные особенности Clickhouse Clickhouse - аналитическая (OLAP) СУБД, главной особенностью которой является подход к хранению данных в виде колонок.&#xA;В отдельных случаях может быть в десятки и даже сотни раз быстрее, чем традиционные SQL-БД.</description>
+    </item>
+  </channel>
+</rss>
