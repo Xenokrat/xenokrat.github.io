@@ -5,7 +5,7 @@ theme = 'beautifulhugo'
 
 summaryLength = 30
 
-[author] 
+[params.author]
   name = "Павел Барабанов"
   github = "https://github.com/Xenokrat"
   email = "barabanovpv95@gmail.com"
