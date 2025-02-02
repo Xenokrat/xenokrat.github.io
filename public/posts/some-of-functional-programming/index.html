@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Галопом по ФП - Моноиды - </title>
+
+  <meta name="description" content="Абсолютно must-watch доклад по функциональному программированию от Скотта Влашина, владельца замечательного сайта F# for Fun and Profit, и автора многих важных книг по функцональному программированию, вроде # Domain Modeling Made Functional (увы, еще не читал).">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/some-of-functional-programming\/",
+          "name": "Галопом по фп моноиды"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Галопом по ФП - Моноиды",
+  "description" : "Абсолютно must-watch доклад по функциональному программированию от Скотта Влашина, владельца замечательного сайта F# for Fun and Profit, и автора многих важных книг по функцональному программированию, вроде # Domain Modeling Made Functional (увы, еще не читал).\n",
+  "inLanguage" : "en",
+  "wordCount":  575 ,
+  "datePublished" : "2024-08-14T09:53:07\u002b03:00",
+  "dateModified" : "2024-08-14T09:53:07\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/some-of-functional-programming\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Галопом по ФП - Моноиды" />
+<meta property="og:description" content="Абсолютно must-watch доклад по функциональному программированию от Скотта Влашина, владельца замечательного сайта F# for Fun and Profit, и автора многих важных книг по функцональному программированию, вроде # Domain Modeling Made Functional (увы, еще не читал).">
+<meta property="og:url" content="http://localhost:1313/posts/some-of-functional-programming/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Галопом по ФП - Моноиды" />
+  <meta name="twitter:description" content="Абсолютно must-watch доклад по функциональному программированию от Скотта Влашина, владельца замечательного сайта F# for Fun and Profit, и автора многих важных книг по функцональному программированию, …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Галопом по ФП - Моноиды</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Абсолютно must-watch доклад по функциональному программированию от Скотта Влашина, владельца замечательного сайта <a href="https://fsharpforfunandprofit.com">F# for Fun and Profit</a>, и автора многих важных книг по функцональному программированию, вроде <a href="https://pragprog.com/titles/swdddf/domain-modeling-made-functional/"># Domain Modeling Made Functional</a> (увы, еще не читал).</p>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/E8I19uA-wGY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>Вообще весь доклад - это максимально сжатое и понятное широкому кругу разработчиков введение в ФП и отличное место, чтобы примерно представить как решают проблемы там. Особенно хорошо воспринимается на контрасте с сравнением с привычными ООП подходами.</p>
+<p>Поэтому его здорово использовать как каркас, чтобы объяснить читателям (и себе тоже :)), важные идеи, которые можно аккуратненько &ldquo;одолжить&rdquo; и использовать и в других языках.</p>
+<p>Давайте посмотрим на <code>моноиды</code>, тем более, это не самая популярная идея из функциональщины, но при этом достаточно простая.</p>
+<p><strong>Моноид</strong> - это категория объектов, но определить его не так уж сложно, даже не придется погружаться сильно в теорию категорий, достаточно 3 свойств:</p>
+<ol>
+<li>У моноида есть операция &ldquo;конкатенации&rdquo;, т.е. мы можем взять один моноид и &ldquo;сложить&rdquo; его с другим, получив при этом такой же моноид.
+<ol>
+<li>Для для сложения целых чисел и произведения всегда получится такое же целое число.</li>
+<li>При конкатенации строк получается новая строка.</li>
+</ol>
+</li>
+<li>Ассоциативность: (1 + 2) + 3 то же самое, что 1 + (2 + 3), так же, очевидно, это работает и для строк.</li>
+<li>Наличие &ldquo;нейтрального&rdquo; элемента: т.е. для моноидов существует такой элемент, который при &ldquo;складывании&rdquo; не изменяет текущий элемент:
+<ol>
+<li>Для сложения целых это ноль: <code>2 + 0 =&gt; 2 </code></li>
+<li>Для произведения: <code>2 * 1 =&gt; 2</code></li>
+<li>Для строк - пустая строка: <code>&quot;hello&quot; + &quot;&quot; =&gt; &quot;hello&quot;</code>
+(интересный факт, без отсутствие нейтрального элемента даёт нам так называемую <code>полугруппу</code>)</li>
+</ol>
+</li>
+</ol>
+<p>Какие плюсы может дать нам знание того, что определенный элемент является моноидом?</p>
+<ul>
+<li>Свойство 1 дает нам бинарную операцию между элементами, благодаря которой 2 моноида становятся 1. И эту операцию можно повторить сколько угодно раз, сведя набор значений к единственному. Таким образом мы получаем операцию <code>reduce</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> functool <span style="color:#f92672">import</span> reduce
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lst <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>reduce(<span style="color:#66d9ef">lambda</span> a, b: a <span style="color:#f92672">+</span> b, lst) <span style="color:#75715e"># даст 6</span>
+</span></span></code></pre></div><ul>
+<li>Второе свойство говорит, что порядок выполнения не важен. Поэтому моноиды так удобно использовать с алгоритмами &ldquo;разделяй и властвуй&rdquo;. Их легко и безопасно параллелить, а также постепенно накапливать значения.</li>
+<li>Наконец последнее свойство позволяет задать начальное значения в цепочке, или отразить &ldquo;пустое&rdquo; значение.</li>
+</ul>
+<p>Типичный паттерн использования моноидов подразумевает &ldquo;привести&rdquo; существующий объект к тому, чтобы он стал моноидом, чтобы затем использовать описанные выше свойства.</p>
+<p>Попробуем применить эти идеи на Python: допустим у нас есть класс Customer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span>: 
+</span></span><span style="display:flex;"><span>	name: str 
+</span></span><span style="display:flex;"><span>	age: int 
+</span></span><span style="display:flex;"><span>	purchase_amount: float
+</span></span></code></pre></div><p>Создадим для этого класса моноид, который будет отражать статистику по приобретению товаров клиентами:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerStat</span>: 
+</span></span><span style="display:flex;"><span>	total_customers: int 
+</span></span><span style="display:flex;"><span>	total_age: int 
+</span></span><span style="display:flex;"><span>	total_purchase: float 
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@staticmethod</span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">identity</span>() <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;CustomerStat&#39;</span>: 
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> CustomerStat(
+</span></span><span style="display:flex;"><span>			total_customers<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>			total_age<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>			total_purchase<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		) 
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">combine</span>(self, stat2: <span style="color:#e6db74">&#39;CustomerStat&#39;</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;CustomerStat&#39;</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> CustomerStat(
+</span></span><span style="display:flex;"><span>			total_customers<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>total_customers <span style="color:#f92672">+</span> stat2<span style="color:#f92672">.</span>total_customers,
+</span></span><span style="display:flex;"><span>			total_age<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>total_age <span style="color:#f92672">+</span> stat2<span style="color:#f92672">.</span>total_age,
+</span></span><span style="display:flex;"><span>			total_purchase<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>total_purchase <span style="color:#f92672">+</span> stat2<span style="color:#f92672">.</span>total_purchase, 
+</span></span><span style="display:flex;"><span>		) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">average_age</span>(self): 
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>total_age <span style="color:#f92672">/</span> self<span style="color:#f92672">.</span>total_customers 
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>total_customers <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span>		)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">average_purchase</span>(self): 
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>total_purchase <span style="color:#f92672">/</span> self<span style="color:#f92672">.</span>total_customers 
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>total_customers <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		)
+</span></span></code></pre></div><p>Дополнительно, нам нужна функция, которая поможет &ldquo;смапить&rdquo; покупателя в класс для статистики, и функция-аналог <code>reduce</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">customer_to_stat</span>(customer: Customer) <span style="color:#f92672">-&gt;</span> CustomerStat:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> CustomerStat(
+</span></span><span style="display:flex;"><span>        total_customers<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>        total_age<span style="color:#f92672">=</span>customer<span style="color:#f92672">.</span>age,
+</span></span><span style="display:flex;"><span>        total_purchase<span style="color:#f92672">=</span>customer<span style="color:#f92672">.</span>purchase_amount,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate_customers</span>(customers: List[Customer]) <span style="color:#f92672">-&gt;</span> CustomerStat:
+</span></span><span style="display:flex;"><span>    customer_stats <span style="color:#f92672">=</span> map(customer_to_stat, customers)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> reduce(CustomerStat<span style="color:#f92672">.</span>combine, customer_stats, CustomerStat<span style="color:#f92672">.</span>identity())
+</span></span></code></pre></div><p>Теперь мы можем быстро и легко работать с статистикой по клиентам</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Пример</span>
+</span></span><span style="display:flex;"><span>customers <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    Customer(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Alice&#34;</span>, age<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>, purchase_amount<span style="color:#f92672">=</span><span style="color:#ae81ff">100.0</span>),
+</span></span><span style="display:flex;"><span>    Customer(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bob&#34;</span>, age<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>, purchase_amount<span style="color:#f92672">=</span><span style="color:#ae81ff">150.0</span>),
+</span></span><span style="display:flex;"><span>    Customer(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Charlie&#34;</span>, age<span style="color:#f92672">=</span><span style="color:#ae81ff">35</span>, purchase_amount<span style="color:#f92672">=</span><span style="color:#ae81ff">200.0</span>)
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aggregated_stat <span style="color:#f92672">=</span> aggregate_customers(customers)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Average Age: </span><span style="color:#e6db74">{</span>aggregated_stat<span style="color:#f92672">.</span>average_age()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Average Purchase: </span><span style="color:#e6db74">{</span>aggregated_stat<span style="color:#f92672">.</span>average_purchase()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p>Этот приём используется в функциональных языках повсеместно, но я не вижу больших препятствий для того, чтобы использовать моноиды в любых языках.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/value-of-values/" data-toggle="tooltip" data-placement="top" title="Значение значений">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/introduction-to-assembly/" data-toggle="tooltip" data-placement="top" title="Знакомство с Ассемблером">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

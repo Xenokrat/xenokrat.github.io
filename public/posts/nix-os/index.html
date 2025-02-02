@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Nix Os - </title>
+
+  <meta name="description" content="Nix - это в первую очередь пакетный менеджер, концепция которого строится вокруг декларативного подхода к управлению пакетами.
+кому интересна теория, можно почитать здесь.
+На текущий момент репозиторий языка занимает первое место по количеству доступных пакетов, обогнав даже знаменитый AUR.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/nix-os\/",
+          "name": "Nix os"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Nix Os",
+  "description" : "Nix - это в первую очередь пакетный менеджер, концепция которого строится вокруг декларативного подхода к управлению пакетами. кому интересна теория, можно почитать здесь. На текущий момент репозиторий языка занимает первое место по количеству доступных пакетов, обогнав даже знаменитый AUR.\n",
+  "inLanguage" : "en",
+  "wordCount":  608 ,
+  "datePublished" : "2024-07-05T16:51:38\u002b03:00",
+  "dateModified" : "2024-07-05T16:51:38\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/nix-os\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Nix Os" />
+<meta property="og:description" content="Nix - это в первую очередь пакетный менеджер, концепция которого строится вокруг декларативного подхода к управлению пакетами.
+кому интересна теория, можно почитать здесь.
+На текущий момент репозиторий языка занимает первое место по количеству доступных пакетов, обогнав даже знаменитый AUR.">
+<meta property="og:url" content="http://localhost:1313/posts/nix-os/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Nix Os" />
+  <meta name="twitter:description" content="Nix - это в первую очередь пакетный менеджер, концепция которого строится вокруг декларативного подхода к управлению пакетами.
+кому интересна теория, можно почитать здесь.
+На текущий момент …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Nix Os</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><a href="https://nixos.org/">Nix</a> - это в первую очередь пакетный менеджер, концепция которого строится вокруг декларативного подхода к управлению пакетами.
+<em>кому интересна теория, можно почитать <a href="https://web.archive.org/web/20190421081837/https://nixos.org/~eelco/pubs/iscsd-scm11-final.pdf">здесь</a></em>.
+На текущий момент репозиторий языка занимает первое место по количеству доступных пакетов, обогнав даже знаменитый AUR.</p>
+<p><a href="https://discourse.nixos.org/t/nixpkgs-has-been-the-largest-repository-for-months/10667"><img src="https://discourse.nixos.org/uploads/default/original/2X/1/1f6a38cffbc0072e4c3392447e5a83176b3bc964.png" alt="Сравнение пакетов"></a></p>
+<p>Также это полноценный, чистый функциональный язык программирования, который создан для управления конфигурацией пакетов nix.
+И, наконец, <code>NisOS</code> - это Linux-дистрибутив, который создан на базе пакетного менеджера <code>Nix</code>.</p>
+<p>Последнее время в IT-сфере много шуба вокруг NixOS, некоторые даже называют его новым <strong>Arch Linux</strong> (из того же факта, что это Linux для элитариев).
+Для меня это уже третья попытка использования NixOS в качестве своей домашней системы (и пока самая успешная).</p>
+<p>На очередную попытку попробовать меня вдохновило видео:</p>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/CwfKlX3rA6E?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>И нужно сказать, что это та еще карусель эмоций.</p>
+<p>Рассмотрим сначала, за что любят этот дистрибутив:</p>
+<ul>
+<li>Неизменяемая read-only система.
+Единственный способ управления системой - это <code>nix</code>. Каждое обновление &ldquo;накладывается&rdquo; поверх предыдущего.</li>
+<li>Неограниченное количество бэкапов системы.
+Если обновляется библиотека, NixOS сохранит обе версии, и будет хранить старые версии до тех пор, пока мы не воспользуемся garbage collector&rsquo;ом.
+В любой момент пользователь может вернуться в предыдущей сохраненной конфигурации системы без сложностей.
+В результате мы получаем систему, которую крайне сложно сломать, любая наша ошибка легко исправляется откатом назад.
+Это, кстати, сильно облегчает обучение.</li>
+<li>Отсутствие dependency hell: <code>nix</code> без проблем использует несколько версий библиотек для каждого конкретного случая.</li>
+<li>Огромное количество доступного софта, причём свежего, в отличии, например, от репозиториев Debian.</li>
+<li>Конфигурация практически ВСЕГО (от партицирования диска до настроек текстового редактора) одним едиственным спобобом - посредством
+файлов *.nix.</li>
+</ul>
+<p>Но, увы, не всё так идеально и гладко:</p>
+<ul>
+<li>Официальная документация не всегда полна и понятна, конкретную информацию часто нужно искать по блогам и Youtube видео.
+При этом информация устаревает относительно быстро, посты старше нескольких лет уже не слишком актуальны.</li>
+<li>Высокий порог вхождения: в сочетании с предыдущим пунктом, можно потратить многие часы в попытах разобраться с тем, что
+на любом другом дистрибутиве заняло бы минуты.
+Тут сильно поможет, если имеется какой-никакой опыт с функциональными языками вроде <code>Haskell</code> или <code>OCaml</code>.</li>
+<li>Огромное множество &ldquo;фич&rdquo;, которые приняты и признаны сообществом, но все еще официально не поддерживаются (вроде <a href="https://nixos.wiki/wiki/Flakes">Flakes</a>, которые
+я настоятельно рекомендую использовать сразу, если решите попробовать <code>NixOS</code>, и <a href="https://nixos.wiki/wiki/Home_Manager">Home Manager</a>).
+При этом не существует какого-то общепризнанного подхода или гайдлайна. Для решения одной проблемы может быть множество подходов, которые приводят к схожему результату,
+что, я считаю, большой недостаток.</li>
+<li>Работа с ошибками: стактрейсы одни из самых ужасных, с которыми я сталкивался, в лучшем случае указывают место в конфиге, которое является
+причиной ошибки, в худшем там не будет вообще ничего связанного в вашим конфигом, удачи разобраться!
+Желательно иметь хотя бы общее представление о <code>nix</code> как языке, чтобы понимать некоторые особенности конфигурирования, вроде <code>let in</code>.</li>
+</ul>
+<p>Когда всё в <code>NixOS</code> просто работает, это работает отменно.
+Но когда у что-то не работает, то это реально больно, и время, которое ты тратишь на решение проблемы часто на порядок больше, чем на других системах.</p>
+<h2 id="выводы">Выводы</h2>
+<p>На данный момент я всё еще не уверен, насколько резонно использовать NixOS в качествое своей домашней системы.
+Надежности системы можно добиться и другими способами (существуют, например, другие &ldquo;неизменяемые&rdquo; дистрибутивы, вроде <a href="https://fedoraproject.org/atomic-desktops/silverblue/">Fedora Silverblue</a>).
+Полная конфигурация системы одним единственным подходом &ndash; задача непростая и времязатратная, а результат не всегда идеален.
+Мне сильно помогло установка на то, что не всё должно быть идеально настроено только в соответсвии с nix-подходом.
+Всегда можно грызть слона по кусочкам, начиная с более примитивного подхода, и постепенно приводить его в соответствие с философией <code>nix</code>.
+Большой потеницал для использования как DevOps инструмента: представьте себе &ndash; устанавливаем
+на десятки компьютеров пользователей (можно даже с разным хадром) абсолютно идентичные преднастроенные пакеты программ
+и все это на условно &ldquo;неубиваймой&rdquo; для пользователя системе.</p>
+<p>(у <code>nix</code> также есть и другие использования &ndash; например создание виртуального окружения для работы с языками программирования).</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/being-smart-about-loops/" data-toggle="tooltip" data-placement="top" title="Нам всё еще нужны циклы?">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/distrobox/" data-toggle="tooltip" data-placement="top" title="Distrobox как инструмент разработчика">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

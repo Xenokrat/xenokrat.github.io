@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Квантовое программирование - возможно самая странная парадигма среди ЯП - </title>
+
+  <meta name="description" content="Недавно мне стало интересна технология использования квантовых вычислений, точнее, как именно
+алгоритмы должны использовать особенности квантового мира для того, чтобы производить вычисления на множество порядков быстрее,
+чем обычные компьютеры.
+В квантовы вычисления вместо двоичной логики c 0 и 1 используются кубиты.
+Кубиты похоже на обычные биты в том смысле, что их значения также могут быть равными 0 и 1,
+но особенность здесь в том, что кубит сам по себе не находится в одном из этих состояний, но пребывает в суперпозиции.
+Мы не можем знать точное значение кубита без специальной операции измерения, т.к. он находится в определённом вероятностном состоянии
+между 0 и 1. Эти вероятности обычно обозначаются как A и B, и означают примерно что A^2 это вероятность перехода в состояние 0,
+соответственно B^2 - в состояние 1.
+Знать заранее результат невозможно (из-за фундаментального физического закона, а не скажем нехватки технологий), а сам процесс измерения
+приводит к тому, что кубит из суперпозиции переходит в одно из 2-х состояний, при этом предыдущие значения A и B теряются.
+Считается, что по причине этого явления кубит (до измерения) как бы находится одновременно во всех состояниях, а значит, например,
+4 кубита будут представлять собой одновременно 16 состояний.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/q-sharp-intro\/",
+          "name": "Квантовое программирование возможно самая странная парадигма среди яп"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Квантовое программирование - возможно самая странная парадигма среди ЯП",
+  "description" : "Недавно мне стало интересна технология использования квантовых вычислений, точнее, как именно алгоритмы должны использовать особенности квантового мира для того, чтобы производить вычисления на множество порядков быстрее, чем обычные компьютеры.\nВ квантовы вычисления вместо двоичной логики c 0 и 1 используются кубиты. Кубиты похоже на обычные биты в том смысле, что их значения также могут быть равными 0 и 1, но особенность здесь в том, что кубит сам по себе не находится в одном из этих состояний, но пребывает в суперпозиции. Мы не можем знать точное значение кубита без специальной операции измерения, т.к. он находится в определённом вероятностном состоянии между 0 и 1. Эти вероятности обычно обозначаются как A и B, и означают примерно что A^2 это вероятность перехода в состояние 0, соответственно B^2 - в состояние 1. Знать заранее результат невозможно (из-за фундаментального физического закона, а не скажем нехватки технологий), а сам процесс измерения приводит к тому, что кубит из суперпозиции переходит в одно из 2-х состояний, при этом предыдущие значения A и B теряются. Считается, что по причине этого явления кубит (до измерения) как бы находится одновременно во всех состояниях, а значит, например, 4 кубита будут представлять собой одновременно 16 состояний.\n",
+  "inLanguage" : "en",
+  "wordCount":  541 ,
+  "datePublished" : "2024-10-10T22:14:17\u002b03:00",
+  "dateModified" : "2024-10-10T22:14:17\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/q-sharp-intro\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Квантовое программирование - возможно самая странная парадигма среди ЯП" />
+<meta property="og:description" content="Недавно мне стало интересна технология использования квантовых вычислений, точнее, как именно
+алгоритмы должны использовать особенности квантового мира для того, чтобы производить вычисления на множество порядков быстрее,
+чем обычные компьютеры.
+В квантовы вычисления вместо двоичной логики c 0 и 1 используются кубиты.
+Кубиты похоже на обычные биты в том смысле, что их значения также могут быть равными 0 и 1,
+но особенность здесь в том, что кубит сам по себе не находится в одном из этих состояний, но пребывает в суперпозиции.
+Мы не можем знать точное значение кубита без специальной операции измерения, т.к. он находится в определённом вероятностном состоянии
+между 0 и 1. Эти вероятности обычно обозначаются как A и B, и означают примерно что A^2 это вероятность перехода в состояние 0,
+соответственно B^2 - в состояние 1.
+Знать заранее результат невозможно (из-за фундаментального физического закона, а не скажем нехватки технологий), а сам процесс измерения
+приводит к тому, что кубит из суперпозиции переходит в одно из 2-х состояний, при этом предыдущие значения A и B теряются.
+Считается, что по причине этого явления кубит (до измерения) как бы находится одновременно во всех состояниях, а значит, например,
+4 кубита будут представлять собой одновременно 16 состояний.">
+<meta property="og:url" content="http://localhost:1313/posts/q-sharp-intro/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Квантовое программирование - возможно самая странная парадигма среди …" />
+  <meta name="twitter:description" content="Недавно мне стало интересна технология использования квантовых вычислений, точнее, как именно
+алгоритмы должны использовать особенности квантового мира для того, чтобы производить вычисления на …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Квантовое программирование - возможно самая странная парадигма среди ЯП</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Недавно мне стало интересна технология использования квантовых вычислений, точнее, как именно
+алгоритмы должны использовать особенности квантового мира для того, чтобы производить вычисления на множество порядков быстрее,
+чем обычные компьютеры.</p>
+<p>В квантовы вычисления вместо двоичной логики c 0 и 1 используются кубиты.
+Кубиты похоже на обычные биты в том смысле, что их значения также могут быть равными 0 и 1,
+но особенность здесь в том, что кубит сам по себе не находится в одном из этих состояний, но пребывает в суперпозиции.
+Мы не можем знать точное значение кубита без специальной операции измерения, т.к. он находится в определённом вероятностном состоянии
+между 0 и 1. Эти вероятности обычно обозначаются как <code>A</code> и <code>B</code>, и означают примерно что <code>A^2</code> это вероятность перехода в состояние 0,
+соответственно <code>B^2</code> - в состояние 1.
+Знать заранее результат невозможно (из-за фундаментального физического закона, а не скажем нехватки технологий), а сам процесс измерения
+приводит к тому, что кубит из суперпозиции переходит в одно из 2-х состояний, при этом предыдущие значения <code>A</code> и <code>B</code> теряются.
+Считается, что по причине этого явления кубит (до измерения) как бы находится одновременно во всех состояниях, а значит, например,
+4 кубита будут представлять собой одновременно 16 состояний.</p>
+<p>Управлять кубитами можно, пропуская их через специальные вентили, которые изменяют их внутреннее вероятностное состояние
+(при этом сохраняется равенство <code>A^2 + B^2 = 1</code> (<strong>условие нормализации кубита</strong>).
+Некоторые вентили могут принимать больше одного кубита - например CNOT один кубит является управляющим, и состояние второго зависит от
+результата его измерения. Такие кубиты считаются &ldquo;связанными&rdquo;, в том смысле, что информация об таких кубитах может быть получена
+из измерения другого.</p>
+<p>Всё это только введение, и может показаться, что эта тема исключительно сложна, однако на самом деле для старта в этой теме достаточно знать на базовом уровне:</p>
+<ul>
+<li>Основы программирования на других языках (само собой :))</li>
+<li>Комплексные числа (для описания состояний кубитов)</li>
+<li>Линейная алгебра (состояния и их преобразования при помощи вентелей)</li>
+<li>Базовая теория вероятности.</li>
+</ul>
+<p>Самый простой способ исследовать этот вопрос &ndash; использовать симулятор квантового компьютера.
+И здесь как нельзя кстати приходится чудесный open source проект Microsoft &ndash; язык <a href="https://github.com/microsoft/qsharp"><code>Q#</code></a>
+и проект [Azure Quantum Development Kit]</p>
+<p><code>Q#</code> очень user-friendly язык, особенно если вы уже знакомы с C#, или подобными ему языками.
+Читается очень легко и понятно.
+Кроме того, всё это очень легко скачать и настроить для использования на своём компьютере,
+или воспользоваться песочницей прямо в браузере.</p>
+<p>Есть целый сервис для введения в тему квантовых алгоритмов на Q#, с решением задач:
+<a href="https://quantum.microsoft.com/en-us/tools/quantum-katas">https://quantum.microsoft.com/en-us/tools/quantum-katas</a></p>
+<p>Если мы хотим использовать Q# локально в Jupyter-ноутбуках:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>python -m pip install qsharp azure-quantum
+</span></span></code></pre></div><p>Последний пакет нам нужен только если мы планируем использовать облачный сервис Azure.
+Microsoft пытается пушить использование квантового симулятора в Azure (что включает платную подписку, хотя
+там вроде дают бюджет &ldquo;на попробовать&rdquo;), но в целом всё хорошо работает и локально.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>python -m pip install ipykernel ipympl jupyterlab
+</span></span></code></pre></div><p>В целом, возможно я вернусь к этому вопросу в ближайшее время, потому что так и не приблизился
+к пониманию, как конкретно должны использоваться квантовые алгоритмы, ведь даже
+если кубит находится в суперпозиции, то получить из него информацию можно только измерением,
+и в конце концов мы получаем тот же самый один бит информации (но видимо они будут связаны с квантовыми
+регистрами, т.е. группами связанных друг с другом кубитов).</p>
+<p>Однако приятно, что Microsoft даёт очень хороший набор инструментов и много информации для людей, которые интересуются данной темой.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/oop-fp-similarity2/" data-toggle="tooltip" data-placement="top" title="Схожеcть принципов в ООП и ФП - Часть 2">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/python-hoare-triplets/" data-toggle="tooltip" data-placement="top" title="Логика Хоара и Динамическая типизация">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

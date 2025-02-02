@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Distrobox как инструмент разработчика - </title>
+
+  <meta name="description" content="Distrobox - это opensource проект, по сути - большой набор shell-скриптов, который при помощи выбранного бэкэнда (docker, podman, с недавних пор еще lilipod) позволяет запускать контейнеры популярных Линукс дистрибутивов.
+При этом мы получаем доступ к всему диапазону программных пакетов конкретного дистрибутива, и
+сам контейнер близко интегрируются с нашей основной системой, позволяя легко пользоваться приложениями внутри контейнера.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/distrobox\/",
+          "name": "Distrobox как инструмент разработчика"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Distrobox как инструмент разработчика",
+  "description" : "Distrobox - это opensource проект, по сути - большой набор shell-скриптов, который при помощи выбранного бэкэнда (docker, podman, с недавних пор еще lilipod) позволяет запускать контейнеры популярных Линукс дистрибутивов. При этом мы получаем доступ к всему диапазону программных пакетов конкретного дистрибутива, и сам контейнер близко интегрируются с нашей основной системой, позволяя легко пользоваться приложениями внутри контейнера.\n",
+  "inLanguage" : "en",
+  "wordCount":  572 ,
+  "datePublished" : "2024-07-15T18:08:56\u002b03:00",
+  "dateModified" : "2024-07-15T18:08:56\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/distrobox\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Distrobox как инструмент разработчика" />
+<meta property="og:description" content="Distrobox - это opensource проект, по сути - большой набор shell-скриптов, который при помощи выбранного бэкэнда (docker, podman, с недавних пор еще lilipod) позволяет запускать контейнеры популярных Линукс дистрибутивов.
+При этом мы получаем доступ к всему диапазону программных пакетов конкретного дистрибутива, и
+сам контейнер близко интегрируются с нашей основной системой, позволяя легко пользоваться приложениями внутри контейнера.">
+<meta property="og:url" content="http://localhost:1313/posts/distrobox/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Distrobox как инструмент разработчика" />
+  <meta name="twitter:description" content="Distrobox - это opensource проект, по сути - большой набор shell-скриптов, который при помощи выбранного бэкэнда (docker, podman, с недавних пор еще lilipod) позволяет запускать контейнеры популярных …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Distrobox как инструмент разработчика</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><a href="https://distrobox.it/"><strong>Distrobox</strong></a> - это opensource проект, по сути - большой набор shell-скриптов, который при помощи выбранного бэкэнда (docker, podman, с недавних пор еще <a href="https://github.com/89luca89/lilipod">lilipod</a>) позволяет запускать контейнеры популярных Линукс дистрибутивов.
+При этом мы получаем доступ к всему диапазону программных пакетов конкретного дистрибутива, и
+сам контейнер близко интегрируются с нашей основной системой, позволяя легко пользоваться приложениями внутри контейнера.</p>
+<h3 id="зачем-такое-нужно">Зачем такое нужно?</h3>
+<p>Можно использовать какой-нибудь стабильный дистрибутив Linux, вроде Ubuntu, Debian, даже незименяемые дистрибутивы, вроде Fedora Sliverblue,
+и при этом иметь полный доступ к вообще любым репозиториям софта, которые существуют среди популярных дистрибутивов: ArchLinux, openSUSE Tumbleweed
+и т.д.</p>
+<p>Всё мои инструменты для работы находятся в удобной bleeding-edge коробочке, где я могу иметь самое свежее ПО, при этом
+без необходимости настраивать репозитории и засорять свою систему большим количеством софта и библиотек.</p>
+<p>Может запускать даже графические и аудио-приложения
+(есть даже вариант использования рабочего стола GNOME или KDE полностью из контейнера, <a href="https://github.com/89luca89/distrobox/blob/main/docs/posts/run_latest_gnome_kde_on_distrobox.md">инструкция</a> если кому интересно, но мне кажется это перебор :).</p>
+<p>Кроме того:</p>
+<ul>
+<li>Rootless установка программ.</li>
+<li>Совместимость программы с нашей системой не важна.</li>
+<li>Изоляция программ от основной системы.</li>
+<li>Установка программ на компьютере с ограниченными правами, или на атомных дистрибутивах.</li>
+</ul>
+<p>Всё это, естественно, возможно и при управлениями контейнерами &ldquo;вручную&rdquo;,
+но <strong>Distrobox</strong> здорово упрощает весь этот процесс, например, создать контейнер для Убунты максимально просто:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># создание обычного контейнера Ubuntu</span>
+</span></span><span style="display:flex;"><span>distrobox create -i ubuntu:20.04
+</span></span></code></pre></div><p>Далее мы можем просто зайти &ldquo;внутрь&rdquo; контейнера:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>distrobox enter ubuntu
+</span></span></code></pre></div><p>и установить любые программы, которые доступны с <code>apt</code> на Ubuntu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt-get install ripgrep
+</span></span></code></pre></div><p>И всё: можно использовать <code>rg</code>, в том числе для поиска на своей основной системе.
+Чтобы не &ldquo;заходить&rdquo; каждый раз внутрь контейнера для запуска приложений, возможно также &ldquo;экспортировать&rdquo;
+их наружу:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>distrobox-export --bin <span style="color:#e6db74">`</span>which rg<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>Теперь мы можем использовать <code>ripgrep</code> напрямую, <code>export</code> создал для нас удобный скрипт, который
+фоном запустит контейнер с приложением и выполнит команду.</p>
+<h3 id="зачем-такое-не-нужно">Зачем такое не нужно?</h3>
+<p>Distrobox всё-таки не обеспечивает 100% безопасную песочницу, т.к. интегрирует контейнеры с основной системой.
+Если нам нужна надежная изоляция для нашей работы, правильно всё таки использовать обычные docker/podman или иные
+средства виртуализации.</p>
+<h3 id="чем-distrobox-может-быть-интересен-разработчику">Чем Distrobox может быть интересен разработчику?</h3>
+<ul>
+<li>Быстро получаем воспроизводимую среду для разработки.</li>
+<li>Устанавливаем библиоткеки, редакторы/IDE, дебаггеры
+(например, легко можно использовать последнюю версию Neovim внутри Distrobox)</li>
+<li>Можем использовать разные версии программ в разных контейнерах.</li>
+<li>Если чего-то нет в репозитории конкретного дистрибутива, всега можно создать еще один.</li>
+</ul>
+<p>Еще один плюс: декларативные описания среды контейнера.
+Поддерживается создание заранее настроенных конфиг-файлом контейнеров, с предустановленными приложениями
+с <a href="https://distrobox.it/usage/distrobox-assemble/">distrobox-assemble</a>.
+Описанный нами в <code>*.ini</code> файле контейнер, можно запустить на любой машине, где установлен Distrobox, и сразу начать работать.
+Затем можно удалить контейнер, пересоздать, запустить несколько точно таких же на другом компьютере.</p>
+<p>Для интерисующихся ML-инженерией будет интересно,
+что можно легко получить настроенную среду с <code>Pytorch</code> и всеми GPU драйверами
+(AMD драйвер насколько мне известно, поддерживает работу прямо из контейнера, NVidia дожны быть установлены всё-таки и на основной системе
+и продублированы в контейнера).</p>
+<h3 id="что-умеет-еще">Что умеет еще?</h3>
+<p>Distrobox в целом делает работу со своими контейнерами очень просто, например, все контейнеры можно
+проапдейтить одной командой.</p>
+<p>Ещё один интересный вариант использования: наши контейнеры могу включать init-систему <code>systemd</code>.
+А это открывает нам окно, для, например, использования docker&rsquo;а изнутри podman контейнера
+без необходимости установки его на базовой системе.</p>
+<h3 id="выводы">Выводы</h3>
+<p>В целом это один из самых интересных инструментов для Linux, с которыми я встречался,
+и также это ещё один шажок в стороту того, что конкретный дистрибутив и его пакетный менеджер
+становятся всё менее важны сами по себе, и в целом от Linux мы лишь хотим устойчивую среду
+для запуска наших приложений в контейнерах или форматах приложений вроде Flatpak или AppImage.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/nix-os/" data-toggle="tooltip" data-placement="top" title="Nix Os">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/second-lang/" data-toggle="tooltip" data-placement="top" title="Выучить второй язык программирования">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

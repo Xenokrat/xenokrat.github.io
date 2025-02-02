@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Clickhouse Tricks 3 - </title>
+
+  <meta name="description" content="Менее известные особенности Clickhouse. Часть 3
+В этом посте, остановимся на рассмотрении того, как использовать JOINы в Кликхаусе.
+Синтаксис
+Поддерживается стандарнтый набор джойнов: LEFT, RIGHT, CROSS. В этом плане у Clickhouse нет отличий от классических SQL БД. Таже поддерживается использование нескольких ключей в ON или OR.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/clickhouse-tricks-3\/",
+          "name": "Clickhouse tricks 3"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Clickhouse Tricks 3",
+  "description" : "Менее известные особенности Clickhouse. Часть 3 В этом посте, остановимся на рассмотрении того, как использовать JOINы в Кликхаусе.\nСинтаксис Поддерживается стандарнтый набор джойнов: LEFT, RIGHT, CROSS. В этом плане у Clickhouse нет отличий от классических SQL БД. Таже поддерживается использование нескольких ключей в ON или OR.\n",
+  "inLanguage" : "en",
+  "wordCount":  449 ,
+  "datePublished" : "2024-02-02T23:16:32\u002b03:00",
+  "dateModified" : "2024-02-02T23:16:32\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/clickhouse-tricks-3\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Clickhouse Tricks 3" />
+<meta property="og:description" content="Менее известные особенности Clickhouse. Часть 3
+В этом посте, остановимся на рассмотрении того, как использовать JOINы в Кликхаусе.
+Синтаксис
+Поддерживается стандарнтый набор джойнов: LEFT, RIGHT, CROSS. В этом плане у Clickhouse нет отличий от классических SQL БД. Таже поддерживается использование нескольких ключей в ON или OR.">
+<meta property="og:url" content="http://localhost:1313/posts/clickhouse-tricks-3/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Clickhouse Tricks 3" />
+  <meta name="twitter:description" content="Менее известные особенности Clickhouse. Часть 3
+В этом посте, остановимся на рассмотрении того, как использовать JOINы в Кликхаусе.
+Синтаксис
+Поддерживается стандарнтый набор джойнов: LEFT, RIGHT, …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Clickhouse Tricks 3</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="менее-известные-особенности-clickhouse-часть-3">Менее известные особенности Clickhouse. Часть 3</h1>
+<p>В этом посте, остановимся на рассмотрении того, как использовать <code>JOIN</code>ы в Кликхаусе.</p>
+<h2 id="синтаксис">Синтаксис</h2>
+<p>Поддерживается стандарнтый набор джойнов: LEFT, RIGHT, CROSS. В этом плане у <code>Clickhouse</code> нет отличий от классических SQL БД. Таже поддерживается использование нескольких ключей в <code>ON</code> или <code>OR</code>.</p>
+<h2 id="алгоритмы-выполнения">Алгоритмы выполнения</h2>
+<p>Для эффективного использования на большим объемах данных, под которое заточен Кликхаус, имеется целых 6 алгоритмов выполнения <code>JOIN</code>.</p>
+<ul>
+<li>hash</li>
+<li>parallel hash</li>
+<li>grace hash</li>
+<li>partial merge</li>
+<li>full sorting merge</li>
+<li>direct</li>
+</ul>
+<p>Для выбора используемого алгоритма, его достаточно указать вконце запроса в секции <code>SETTINGS</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> sales <span style="color:#66d9ef">AS</span> s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> managers m <span style="color:#66d9ef">ON</span> s.manager_id <span style="color:#f92672">=</span> m.manager_id
+</span></span><span style="display:flex;"><span>SETTINGS join_algorithm <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hash&#39;</span>
+</span></span></code></pre></div><p>Вкратце рассмотрим подробнее все эти варианты</p>
+<h3 id="hash-алгоритмы">Hash алгоритмы</h3>
+<ul>
+<li><strong>hash</strong>: создает единственную таблицу в памяти</li>
+<li><strong>parallel hash</strong> - разделяет данные на секции (buckets) и параллельно создает в памяти несколько таблиц</li>
+<li><strong>grace hash</strong> - по механизму работы, схож с предыдущим, однако при надостатке памяти способен временно использовать дисковое пространство и создавать большее число таблиц.</li>
+</ul>
+<p><strong>Важно</strong> - в памяти создается таблица справа. Во время джойна таблица слева присоединяется через лукапы с хэш-таблицей.
+По этой причине, желательно помещать меньщую таблицу справа.
+Первые два алгоритма завязаны на объем оперативной памяти базы, и при превышении лимита вызовую исключение.</p>
+<h2 id="sort-merge-алгоритмы">Sort-merge алгоритмы</h2>
+<ul>
+<li><strong>full_sorting_merge</strong>: обе таблицы сортируются перед джойном (классический пример алгоритма <code>sort-merge</code>)</li>
+<li><strong>partial_merge</strong>: только правая таблица сортируется перед джойном.</li>
+</ul>
+<p>Сортировка таблицы присходит при этом в памяти, однако, если её недостаточно, данные могут сгружаться на диск.
+<strong>full_sorting_merge</strong> по производительности лишь немного уступает классическому <strong>hash</strong> алгоритму, при этом не приводит к исключению при превышении по RAM.</p>
+<h2 id="direct-алгоритмы">Direct алгоритмы</h2>
+<p>Особое семейство алгоритмов, относящихся к джойнам с особыми таблицами, которые полностью хранятся в памяти БД. К таким относятся:</p>
+<ul>
+<li><strong>Словари (Dictionary</strong></li>
+<li><strong>Таблицы, созданные при помощи Join движка</strong></li>
+<li><strong>EmbededRockDB таблицы (rocksdb таблицы)</strong></li>
+</ul>
+<p>Direct алгоритм будет использован, если справа джойнится таблица одного из перечисленных выше типов.
+Такие джойны очень по производительности даже могут превышать hash-алгоритмы, при этом гораздо менее агрессивно используют память БД.</p>
+<h2 id="какой-алгоритм-стоит-использовать">Какой алгоритм стоит использовать?</h2>
+<p>Если какой-то конкретный запрос с JOINом происходит часто, имеет смысл по возможности поместить правую таблицу полностью в память RAM как Словарь или <code>JOIN Engine</code> таблицу. Используемый при этом direct алгоритм наиболее быстрый и оптимизированный по сравнению со всеми прочими.
+Если такой возможности нет, стоит рассмотреть использование hash-алгоритмов, но только при условии, что правая таблица может полностью поместиться в память при JOINе. Если имеется риск переиспользования RAM, стоит рассмотреть <code>grace hash</code> алгоритм или алгоритмы с сортировкой.
+Если джойн происходит по сортированным ключам, то, возможно, более подходящим вариантом будет <code>full_sorting_merge</code> алгоритм.</p>
+<h2 id="заключение">Заключение</h2>
+<p>В этой части мы познакомили читателя с использованием <code>JOIN</code> в Кликхаусе. Богатый выбор подходов к использованию при этом подразумевает большую ответственность пользователя, с риском получения исключений в ходе запроса, однако, при этом, дает широкие возможности для тонкой настройки и оптимизации работы запросов.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/clickhouse-tricks-2/" data-toggle="tooltip" data-placement="top" title="Менее известные особенности Clickhouse. Часть 2">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/learning-c-lang-1/" data-toggle="tooltip" data-placement="top" title="Изучая язык C в 2024. Часть 1">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

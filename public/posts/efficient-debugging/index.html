@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Эффективная отладка - </title>
+
+  <meta name="description" content="Шутка про то, что программисты не всё-таки 100% времени проводят отлаживая код (иногда они еще создают новые баги) родилась совсем не на пустом месте. Значительную часть времени разработчики проводят, пытаясь отловить и исправить всевозможные ошибки в зачастую сложных и запутанных системах.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/efficient-debugging\/",
+          "name": "Эффективная отладка"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Эффективная отладка",
+  "description" : "Шутка про то, что программисты не всё-таки 100% времени проводят отлаживая код (иногда они еще создают новые баги) родилась совсем не на пустом месте. Значительную часть времени разработчики проводят, пытаясь отловить и исправить всевозможные ошибки в зачастую сложных и запутанных системах.\n",
+  "inLanguage" : "en",
+  "wordCount":  579 ,
+  "datePublished" : "2024-03-23T13:40:11\u002b03:00",
+  "dateModified" : "2024-03-23T13:40:11\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/efficient-debugging\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Эффективная отладка" />
+<meta property="og:description" content="Шутка про то, что программисты не всё-таки 100% времени проводят отлаживая код (иногда они еще создают новые баги) родилась совсем не на пустом месте. Значительную часть времени разработчики проводят, пытаясь отловить и исправить всевозможные ошибки в зачастую сложных и запутанных системах.">
+<meta property="og:url" content="http://localhost:1313/posts/efficient-debugging/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Эффективная отладка" />
+  <meta name="twitter:description" content="Шутка про то, что программисты не всё-таки 100% времени проводят отлаживая код (иногда они еще создают новые баги) родилась совсем не на пустом месте. Значительную часть времени разработчики проводят, …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Эффективная отладка</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Шутка про то, что программисты не всё-таки 100% времени проводят отлаживая код (иногда они еще создают новые баги) родилась совсем не на пустом месте. Значительную часть времени разработчики проводят, пытаясь отловить и исправить всевозможные ошибки в зачастую сложных и запутанных системах.</p>
+<p>Да, есть возможность избежать большого количества ошибок, благодаря хорошему стилю написания кода и широкому покрытию кода тестами, подходами TDD, а также применению контрактного программирования (в самом простом, но тем не менее эффективном варианте, это расстановка всевозможных <code>assert</code>ов по программе).
+Но тем не менее, нужно смириться с фактом, что все перечисленные способы могут лишь сократить время, проводимое за отладкой, до некоторого процента. Да и не всегда мы дебажим только собственный код :).
+Вы будете проводить долгие часы в поисках ошибки, и бОльшая их часть будет потрачена &ldquo;впустую&rdquo;, на попытки воспроизвести ошибку или исключить неверные гипотезы.</p>
+<p>Типичный алгоритм для отладки, думаю, ни для кого не секрет. Он преподается на любых курсах и выглядит следующим образом:</p>
+<ol>
+<li>Воспроизвести ошибку.</li>
+<li>Описать ее словами.</li>
+<li>Сформировать новую гипотезу.</li>
+<li>Проверить гипотезу. 5. Применить исправления.</li>
+<li>Убедиться, что исправления работают, иначе вернуться к п.3 (в идеале закрепить исправление юнит или модульными тестами).</li>
+<li>Сделать какие-нибудь выводы.</li>
+</ol>
+<p>Хотя такая схема является классической, она очень мало говорит нам о том, как именно выдвигать гипотезы.
+В больших программах может быть огромное количество взаимосвязей, и, как следствие, великое множество мест, где может возникнуть проблема.</p>
+<p>Поэтому сейчас мы рассмотрим идею, которая, возможно очевидна для опытных программистов, которые провели десятки часов в дебаггере (по крайней мере, точно очевидна на интуитивному уровне).</p>
+<p>Для ускорения отладки нужно задавать как можно более &ldquo;широкие&rdquo; вопросы.
+Просто перебирая все классы/методы/функции, которые могут быть источником бага, мы получим сотни гипотез, которые нужно перебрать, чтобы отловить баг.
+Даже если ваше предположение звучит очень правдаподобно, проверив такую гипотезу, вы отсечете лишь единственный вариант из десятка возможных.
+Вместо этого нужно задать вопрос: какая проверка позволит мне исключить наиболее количество потенциальных источников бага за один раз?</p>
+<p>Предположим, вы используете telegram-бота для формирования и отправке уведомлений по электронной почте. В такой программе будую сотни строк кода. Проверяя отдельно функцию отправки на бэк, функцию обработки сообщения, функцию валидации данных и т.д. мы потратим много времени.
+В такой сиутации, выделите &ldquo;большие&rdquo; функциональные элементы системы: сам код бота, ваш бэкэнд, сервер, логирование сообщений в БД, запрос на email-сервер. Исключив один такой элемент полностью (тут как раз может пригодиться модульное тестирование с dummy-запросами и моками), и можем больше не возвращаться к нему в будущем.
+Или, возможно, ошибка возникла при обновлении некоторых библиотек в нашем проекте, тогда можно изолировать и исключить все зависимости, которые остались неизменными.</p>
+<p>В целом такой подход является разновидностью стратегии &ldquo;разделяй и властвуй&rdquo;, так как мы постепенно сокращаем область с источником проблемы, исключая все лишнее, затем, задавая следующий вопрос, изолируя еще кусочек и т.д., что чем-то напоминает бинарный поиск.</p>
+<p>Несмотря на всю очевидность пользы данного подхода, у него есть ряд недостатков:</p>
+<ul>
+<li>Формировать более &ldquo;широкие&rdquo; вопросы может быть сложно и непривычно, особенно для больших и сложных систем.</li>
+<li>Даже сформировав такую гипотезу, совсем непросто реализовать её проверку, так как &ldquo;широкие&rdquo; вопросы по определению менее конкретны.</li>
+<li>В больших и сложных проектах, где элементы тесно переплетены, может быть затруднительно изолировать какой-то ее участок для проверки. В таком случае нам придется задавать несколько таких &ldquo;широких&rdquo; гипотез, постепенно уменьшая кругпотенциальных источников бага.</li>
+</ul>
+<p>Даже несмотря на это, разработчику будет крайне полезно тренировать свое умение мыслить о своем проекте в таком вот &ldquo;широком&rdquo; смысле, даже если это не принесет немедленной выгоды, потому что это обучает нас более эффективному подходу к решению проблем в проекте, понимая как он работает (или НЕ работает) в целом, на уровне дизайна.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/convenience-vs-features/" data-toggle="tooltip" data-placement="top" title="Удобство против возможностей">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/timestamp-vs-boolean/" data-toggle="tooltip" data-placement="top" title="Timestamp вместо логических значений в БД">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

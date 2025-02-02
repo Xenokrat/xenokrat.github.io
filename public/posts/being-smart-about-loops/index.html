@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Нам всё еще нужны циклы? - </title>
+
+  <meta name="description" content="Несмотря на то, что раньше в университетах было принято обучать людей CS начиная с какого-нибудь ФП и Лиспа,
+большинство людей сегодня начинают знакомство с программированием с императивного стиля.
+Представлять программу, как установленный набор последовательно выполняемых инструкций, это
+наиболее базовый и понятный новичку подход к тому, чтобы заставить компьютер что-то делать.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/being-smart-about-loops\/",
+          "name": "Нам всё еще нужны циклы?"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Нам всё еще нужны циклы?",
+  "description" : "Несмотря на то, что раньше в университетах было принято обучать людей CS начиная с какого-нибудь ФП и Лиспа, большинство людей сегодня начинают знакомство с программированием с императивного стиля. Представлять программу, как установленный набор последовательно выполняемых инструкций, это наиболее базовый и понятный новичку подход к тому, чтобы заставить компьютер что-то делать.\n",
+  "inLanguage" : "en",
+  "wordCount":  815 ,
+  "datePublished" : "2024-06-25T08:50:39\u002b03:00",
+  "dateModified" : "2024-06-25T08:50:39\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/being-smart-about-loops\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Нам всё еще нужны циклы?" />
+<meta property="og:description" content="Несмотря на то, что раньше в университетах было принято обучать людей CS начиная с какого-нибудь ФП и Лиспа,
+большинство людей сегодня начинают знакомство с программированием с императивного стиля.
+Представлять программу, как установленный набор последовательно выполняемых инструкций, это
+наиболее базовый и понятный новичку подход к тому, чтобы заставить компьютер что-то делать.">
+<meta property="og:url" content="http://localhost:1313/posts/being-smart-about-loops/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Нам всё еще нужны циклы?" />
+  <meta name="twitter:description" content="Несмотря на то, что раньше в университетах было принято обучать людей CS начиная с какого-нибудь ФП и Лиспа,
+большинство людей сегодня начинают знакомство с программированием с императивного стиля. …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Нам всё еще нужны циклы?</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Несмотря на то, что раньше в университетах было принято обучать людей CS начиная с какого-нибудь ФП и Лиспа,
+большинство людей сегодня начинают знакомство с программированием с императивного стиля.
+Представлять программу, как установленный набор последовательно выполняемых инструкций, это
+наиболее базовый и понятный новичку подход к тому, чтобы заставить компьютер что-то делать.</p>
+<p>И одно из первых понятий, с которыми знакомятся начинающие &ndash; это <em>циклы</em>.
+Цикл, если задуматься, неразрывно связан с императивностью. Он группирует множество схожих последовательных инструкций
+над каким-то набором данных. Это очень легко соотнести с реальной жизнью: &ldquo;курьеру нужно посетить дома 1, 2 и 3 и т.п&rdquo;.</p>
+<p>Потому что мы узнаём при обучении о циклах так рано, то поэтому при решении любых проблем
+прибегаем к использованию циклов очень рано.
+Но что если их использование &ndash; это не всегда лучшее или даже хорошее решение?
+Некоторые функциональные языки, например, вообще не включают в себя понятие <em>цикла</em>, и при этом вполне успешно решают
+задачи.</p>
+<h2 id="зачем-заменять-чем-то-циклы">Зачем заменять чем-то циклы?</h2>
+<h3 id="циклы-приводят-к-запутанному-коду">Циклы приводят к запутанному коду</h3>
+<p>Нам хочется проитерироваться по двумерному массиву (по n-мерному). Для этого мы создаём вложенные массивы.
+Затем, по необходимости, включаем туда условия.
+Или нам нужно пройтись по полученной JSON`ке, где наши данные &ldquo;спрятаны&rdquo; за несколькими уровнями ключей.
+Очень быстро наш код становиться сложным для восприятия</p>
+<h3 id="циклы-небезопасны-иногда">Циклы небезопасны (иногда):</h3>
+<p>Самый радикальный пример здесь, это циклы в <code>C</code>, где задача следить, чтобы индекс не вышел за пределы массива
+целиком и полностью на плечах программиста, а ошибка вызовет в лучшем случае краш программы, в худшем она продолжит работать с Undefined Behavior.
+Многие современные языки так или иначе абстрагируют работу циклов, так например в <code>Python</code> цикл <code>for</code> по умолчанию вызывает итератор,
+который удобно защищает нас от <code>IndexError</code>. Но даже в таком случае программисты часто всё равно выбирают (вынуждено или нет) &ldquo;небезопасный&rdquo; вариант, например с <code>while</code>.</p>
+<h3 id="циклы-невыразительны">Циклы невыразительны</h3>
+<p>Цикл в конце концов обозначает в первую очередь именню какую-то итерацию по данным, но к какому результату она приводит
+нужно восстанавливать уже по операциям, вложенным внутрь этого цикла. Это становится только сложнее.</p>
+<h2 id="альтернативные-подходы">Альтернативные подходы</h2>
+<p>Если кратко, список того, что может нам помочь:</p>
+<ul>
+<li>Рекурсия, итеративный процесс.</li>
+<li>Встроенные в язык итераторы.</li>
+<li>Функциональные подходы: <em>map</em>, <em>reduce</em>, <em>fold</em>, <em>filter</em> и т.д.</li>
+<li>Стандартная библиотека языка: для <code>Python</code> это, например, инструменты <code>itertools</code>, <code>functools</code>.</li>
+</ul>
+<p>Рекурсия и итеративный процесс (когда мы передаём результат итерации в аргумент функции, который обычно называют аккyмулятором)
+это то что обычно заменяет циклы в чисто функциональных языках.
+В обычных ЯП рекурсию нужно использовать с большой осторожностью, как многие языки не поддерживают <a href="https://en.wikipedia.org/wiki/Tail_call">tail call optimization</a>,
+поэтому рекурсия может легко привести к переполнению стека.
+Однако рекурсия всё ещё очень мощный инструмент, который позволяет решить определенный ряд задач значительно проще и выразительнее, чем при помощи циклов.
+Самым очевидным примером здесь будет обход узлов деревьев при помощи алгоритмов BFS и DFS.</p>
+<p>Пример решения проблемы с вложенными циклами:</p>
+<p>Допустим, нам нужно создать партиции для нескольких таблиц по датам для нескольких менеджеров.
+Вместо того, чтобы перебирать все варианты через 3 цикла for, мы можем сократить их до одного (при этом мы итерируемся по объекту, который возвращает нам product, что обеспечивает дополнительную безопасность).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>TABLE_LIST <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;sales&#39;</span>, <span style="color:#e6db74">&#39;stocks&#39;</span>, <span style="color:#e6db74">&#39;prices&#39;</span>]
+</span></span><span style="display:flex;"><span>DATES      <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;2024-01-01&#39;</span>, <span style="color:#e6db74">&#39;2024-01-02&#39;</span>, <span style="color:#e6db74">&#39;2024-01-03&#39;</span>]
+</span></span><span style="display:flex;"><span>MANAGERS   <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Tanya&#39;</span>, <span style="color:#e6db74">&#39;Oleg&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_partition</span>(date, table, manager) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>: 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> date, table, manager <span style="color:#f92672">in</span> itertools<span style="color:#f92672">.</span>product(DATES, TABLES_LIST, MANAGERS):
+</span></span><span style="display:flex;"><span>    create_partition(date, table, manager) 
+</span></span></code></pre></div><p>Или если у нас есть JSON со списком сотрудников, мы можем легко отобрать их <code>email</code> по определенным условиям, используя <code>map</code> и <code>filter</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>filtered_emails <span style="color:#f92672">=</span> list(
+</span></span><span style="display:flex;"><span>    map(<span style="color:#66d9ef">lambda</span> employee: employee[<span style="color:#e6db74">&#34;email&#34;</span>], 
+</span></span><span style="display:flex;"><span>        filter(<span style="color:#66d9ef">lambda</span> employee: employee[<span style="color:#e6db74">&#34;department&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Engineering&#34;</span> 
+</span></span><span style="display:flex;"><span>                                <span style="color:#f92672">and</span> employee[<span style="color:#e6db74">&#34;salary&#34;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70000</span>, employees))
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Один из красивых способов представления &ldquo;Игры жизни&rdquo;,
+который я видел, не использует никаких классов для представления доски или клеток
+и также практически не применяет циклов для расчета каждого этапа изменения &ldquo;жизни&rdquo; клеток на доске, вместо этого:</p>
+<ul>
+<li>используется генератор для представления всех соседних клеток текущей.</li>
+<li>расчет распространения клеток каждый ход рассчитывается сочетанием функций chain из itertools и map для применения указанного выше генератора к текущим клеткам.</li>
+<li>используем списковые включения для итоговой фильтрации (аналогично применению filter()).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">neighbors</span>(point):
+</span></span><span style="display:flex;"><span>    x, y <span style="color:#f92672">=</span> point
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, y
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, y
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x    , y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x    , y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> x <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">filter_cond</span>(point, board):
+</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">=</span> sum((neigh <span style="color:#f92672">in</span> board) <span style="color:#66d9ef">for</span> neigh <span style="color:#f92672">in</span> neighbors(point))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> count <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">or</span> (count <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">and</span> point <span style="color:#f92672">in</span> board)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">advance</span>(board):
+</span></span><span style="display:flex;"><span>    newstate <span style="color:#f92672">=</span> set()
+</span></span><span style="display:flex;"><span>    recalc <span style="color:#f92672">=</span> board <span style="color:#f92672">|</span> set(itertools<span style="color:#f92672">.</span>chain(<span style="color:#f92672">*</span>map(neighbors, board)))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [point <span style="color:#66d9ef">for</span> point <span style="color:#f92672">in</span> recalc <span style="color:#66d9ef">if</span> filter_cond(point, board)] 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Пример работы</span>
+</span></span><span style="display:flex;"><span>glider <span style="color:#f92672">=</span> set([(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>):
+</span></span><span style="display:flex;"><span>    glider <span style="color:#f92672">=</span> advance(glider)
+</span></span><span style="display:flex;"><span>print(glider)
+</span></span></code></pre></div><h2 id="заключение">Заключение</h2>
+<p>Циклы &ndash; неотъемлемая часть большинства современных языков программирования.
+И мы так или иначе будем постоянно сталкиваться с ними в работе и использовать их.
+Однако при виде каскада вложенных циклов и условий, впору задуматься, можно ли &ldquo;сказать это лучше&rdquo; на вашем ЯП.
+Посмотрите, например, как возможно решить проблему в более функциональном стиле на C++ (<a href="https://www.youtube.com/watch?v=fsIfQqRjc1U&amp;t=361s">Youtube</a>).</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/linux-productivity/" data-toggle="tooltip" data-placement="top" title="Как быть продуктивным с Linux">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/nix-os/" data-toggle="tooltip" data-placement="top" title="Nix Os">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

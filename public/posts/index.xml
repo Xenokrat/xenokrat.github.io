@@ -2,18 +2,279 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Мой блог про IT, ML и прочее</title>
-    <link>https://xenokrat.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Мой блог про IT, ML и прочее</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 27 Dec 2023 21:10:23 +0300</lastBuildDate>
-    <atom:link href="https://xenokrat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
+    <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
+    <lastBuildDate>Sun, 02 Feb 2025 12:38:42 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Я не понимаю TDD</title>
+      <link>http://localhost:1313/posts/about-tdd/</link>
+      <pubDate>Sun, 02 Feb 2025 12:38:42 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/about-tdd/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Test Driven Development&lt;/code&gt; (TDD) это один из очень уважаемых подходов к разработке и считается признаком высокой культуры подхода к разработке.&#xA;Кроме того это одна из первых &amp;ldquo;больших&amp;rdquo; идей в программировании, с которой я познакомился через книгу&#xA;Гарри Персиваля &lt;strong&gt;&amp;ldquo;Python. Разработка на основе тестирования&amp;rdquo;&lt;/strong&gt;. Но недавно для себя я решил пока полностью&#xA;отказаться от этой идеи, по крайней мере в собственных проектах, и вот почему.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Функциональное программирование и Roc</title>
+      <link>http://localhost:1313/posts/roclang/</link>
+      <pubDate>Fri, 24 Jan 2025 15:16:17 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/roclang/</guid>
+      <description>&lt;p&gt;Использованием приёмов из функционального репертуара уже давно никого не удивишь -&#xA;использование различных &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;reduce&lt;/code&gt; и &lt;code&gt;filter&lt;/code&gt; очень распространено. А писать как можно больше &amp;ldquo;чистых функций&amp;rdquo; рекомендуется&#xA;повсеместно. И всё же даже используются такие вот функциональные паттерны опыт написания программ на привычном JavaScript или Python&#xA;заметно отличается от &amp;ldquo;чистых&amp;rdquo; языков программирования - я практически могу гарантировать, что &amp;ldquo;функциональный код&amp;rdquo; на Python скорее&#xA;всего будет по большей части императивным.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Небесполезный Caps Lock</title>
+      <link>http://localhost:1313/posts/useful-caps/</link>
+      <pubDate>Sat, 04 Jan 2025 18:48:16 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/useful-caps/</guid>
+      <description>&lt;p&gt;Всех с Новым годом!&lt;/p&gt;&#xA;&lt;p&gt;Стараюсь вернуться к регулярному постингу после праздников, и начнём мы с простого.&#xA;Никогда не замечали эту клавишу &lt;code&gt;Caps Lock&lt;/code&gt;. С ней связаны любопытные особенности:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Она расположена как раз под левым мизинцем, с нашими пальцами, расположенными на F и J.&#xA;Это делает её чрезвычайно удобной для нажатия. При этом полезные для любых продвинутых пользователей клавиатуры клавиши (Ctrl, Alt, Esc)&#xA;не так легко доступны для наших пальцев, что весьма неудобно (погуглите &lt;code&gt;Emacs pinky finger&lt;/code&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#34;Забытый стиль ООП в Smalltalk&#34;</title>
+      <link>http://localhost:1313/posts/smalltalk-oop/</link>
+      <pubDate>Fri, 03 Jan 2025 12:37:23 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/smalltalk-oop/</guid>
+      <description>&lt;p&gt;Уже долгое время я пытаюсь разобраться в том, как же правильно &amp;ldquo;готовить&amp;rdquo; этот самый ООП, и долгое время смотрел в основном&#xA;книги, посвященный паттернам проектирования.&#xA;Но когда говорят о развитии ООП, то часто упоминаются язык, который оказал значительное влияние на&#xA;объектно-ориентированный подход - &lt;code&gt;Smalltalk&lt;/code&gt; и его создатель - &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Алан Кей&lt;/a&gt;.&#xA;В какой-то момент возникла мысль - возможно стоит взглянуть на, так сказать, исток всего этого подхода (да, формально первым языком,&#xA;использующим концепцию объектов была &lt;a href=&#34;https://en.wikipedia.org/wiki/Simula&#34;&gt;Simula&lt;/a&gt;, но именно &lt;code&gt;Smalltalk&lt;/code&gt; популяризовал ООП), чтобы&#xA;приблизиться к пониманию того, каким он задумывался изначально.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NoSQL в Clickhouse</title>
+      <link>http://localhost:1313/posts/clickhouse-nosql/</link>
+      <pubDate>Fri, 20 Dec 2024 15:36:46 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/clickhouse-nosql/</guid>
+      <description>&lt;p&gt;Clickhouse колоночная база данных, это значит что данные в ней хранятся не как строки, а именно буквально как колонки&#xA;(можно увидеть как каждая таблица физически разделяет данные на файлы по колонкам).&#xA;Эта особенность отличает Clickhouse от классических SQL баз данных вроде PosgreSQL и MySQL.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Хак для изучения новых языков программирования</title>
+      <link>http://localhost:1313/posts/memoization/</link>
+      <pubDate>Tue, 10 Dec 2024 19:20:19 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/memoization/</guid>
+      <description>&lt;p&gt;При изучении иностранных языков одна из распространенных практик - создание флэш-карточек.&#xA;Такие карточки обычно содержат на лицевой стороне слово или конструкцию и ответ на то что это на обратной стороне.&#xA;Люди создают иногда тысячи таких карточек, чтобы запомнить самые популярные слова и уметь поддерживать самый простой бытовой разговор.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Такой странный Си</title>
+      <link>http://localhost:1313/posts/strange-of-c/</link>
+      <pubDate>Sat, 30 Nov 2024 19:15:10 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/strange-of-c/</guid>
+      <description>&lt;p&gt;Недавно снова вернулся к попыткам разобраться в Си и закрыть этот гештальт.&#xA;Потому что, откровенно говоря, больше всего удовольствия от языка программирования получаю от языка, который&#xA;позволяет почувствовать что мы что-то реально делаем с компьютером, двигаем байтики, копируем память, размещаем структуры в памяти.&#xA;По сравнению с этим продолжения, монады, алгебраические типы данных (хотя последние можно связать с &lt;code&gt;struct&lt;/code&gt; и &lt;code&gt;union&lt;/code&gt;) кажутся чем-то далёким от&#xA;реального мира. Даже странно, что и то и другое существует в одном пространстве языков программирования.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Трюки в программировании in small</title>
+      <link>http://localhost:1313/posts/small-tricks/</link>
+      <pubDate>Wed, 20 Nov 2024 21:41:18 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/small-tricks/</guid>
+      <description>&lt;p&gt;Говоря о программировании, его часто разделяют&#xA;на уровни: &amp;ldquo;programming in the large&amp;rdquo; и  &amp;ldquo;programming in the small&amp;rdquo;&#xA;(есть конечно искушение перевести их как &amp;ldquo;программирование по-большому&amp;rdquo; и &amp;ldquo;по-маленькому&amp;rdquo;, но пожалуй, не стоит).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>More on Hoare Logic</title>
+      <link>http://localhost:1313/posts/more-on-hoare-logic/</link>
+      <pubDate>Mon, 11 Nov 2024 21:27:09 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/more-on-hoare-logic/</guid>
+      <description>&lt;p&gt;В прошлых публикациях уже немного касался Логики Хоара. На всякий случай напомню:&#xA;логика Хоара — это метод структурирования доказательств корректности програм. В контексте разработки программного обеспечения Хоар предложил использовать пред- и постусловия для описания поведения программных компонентов. Предусловия определяют, какие условия должны быть выполнены до вызова функции, а постусловия — какие условия должны быть выполнены после.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Устройство Даффа</title>
+      <link>http://localhost:1313/posts/duff-device/</link>
+      <pubDate>Thu, 31 Oct 2024 15:09:19 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/duff-device/</guid>
+      <description>&lt;p&gt;Те, кто интересуется системными языками вроде &lt;code&gt;C&lt;/code&gt; и &lt;code&gt;C++&lt;/code&gt; обычно рано или поздно натыкаются на так называемый&#xA;&amp;ldquo;Метод Даффа&amp;rdquo; (&lt;em&gt;Duff&amp;rsquo;s Device&lt;/em&gt;). Его идея в общем заключается в ускорении работы циклов&#xA;при помощи трюка, который, вероятно, сильно удивит пользователей современных языков программирования.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Логика Хоара и Динамическая типизация</title>
+      <link>http://localhost:1313/posts/python-hoare-triplets/</link>
+      <pubDate>Mon, 21 Oct 2024 21:11:22 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/python-hoare-triplets/</guid>
+      <description>&lt;p&gt;Логика Хоара - это такой очень просто набор логических правил для доказательства корректности компьютерных программ.&#xA;У неё есть, в том числе и строгие математические правила и аксиомы, но большинству разрабов она в целом интересна скорее для интуитивного понимания&#xA;правильности работы кода.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Квантовое программирование - возможно самая странная парадигма среди ЯП</title>
+      <link>http://localhost:1313/posts/q-sharp-intro/</link>
+      <pubDate>Thu, 10 Oct 2024 22:14:17 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/q-sharp-intro/</guid>
+      <description>&lt;p&gt;Недавно мне стало интересна технология использования квантовых вычислений, точнее, как именно&#xA;алгоритмы должны использовать особенности квантового мира для того, чтобы производить вычисления на множество порядков быстрее,&#xA;чем обычные компьютеры.&lt;/p&gt;&#xA;&lt;p&gt;В квантовы вычисления вместо двоичной логики c 0 и 1 используются кубиты.&#xA;Кубиты похоже на обычные биты в том смысле, что их значения также могут быть равными 0 и 1,&#xA;но особенность здесь в том, что кубит сам по себе не находится в одном из этих состояний, но пребывает в суперпозиции.&#xA;Мы не можем знать точное значение кубита без специальной операции измерения, т.к. он находится в определённом вероятностном состоянии&#xA;между 0 и 1. Эти вероятности обычно обозначаются как &lt;code&gt;A&lt;/code&gt; и &lt;code&gt;B&lt;/code&gt;, и означают примерно что &lt;code&gt;A^2&lt;/code&gt; это вероятность перехода в состояние 0,&#xA;соответственно &lt;code&gt;B^2&lt;/code&gt; - в состояние 1.&#xA;Знать заранее результат невозможно (из-за фундаментального физического закона, а не скажем нехватки технологий), а сам процесс измерения&#xA;приводит к тому, что кубит из суперпозиции переходит в одно из 2-х состояний, при этом предыдущие значения &lt;code&gt;A&lt;/code&gt; и &lt;code&gt;B&lt;/code&gt; теряются.&#xA;Считается, что по причине этого явления кубит (до измерения) как бы находится одновременно во всех состояниях, а значит, например,&#xA;4 кубита будут представлять собой одновременно 16 состояний.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Схожеcть принципов в ООП и ФП - Часть 2</title>
+      <link>http://localhost:1313/posts/oop-fp-similarity2/</link>
+      <pubDate>Wed, 02 Oct 2024 17:55:05 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/oop-fp-similarity2/</guid>
+      <description>&lt;p&gt;Продолжая тему с применением традиционных подходов из ООП практики в&#xA;функциональном программировании.&lt;/p&gt;&#xA;&lt;p&gt;Мы уже рассмотрели, как принцип разделения интерфейсов из SOLID вполне успешно&#xA;может использоваться и в ФП. Для убедительности, рассмотрим еще одну букву из&#xA;знаменитого набора принципов, и попробуем применить принцип &amp;ldquo;Инверсии управления&amp;rdquo;,&#xA;он же Dependency Inversion в функциональном коде.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Схожеcть принципов в ООП и ФП</title>
+      <link>http://localhost:1313/posts/oop-fp-similarity/</link>
+      <pubDate>Mon, 23 Sep 2024 21:17:44 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/oop-fp-similarity/</guid>
+      <description>&lt;p&gt;Функциональное программирование и ООП часто рассматриваются как две абсолютно разные парадигмы разработки программного обеспечения.&#xA;Казалось бы, эти парадигмы очень далеки друг от друга: в классическом ООП мы имеем дело с объектами, которые определяют&#xA;состояние системы в текущий момент времени. В ходе работы программы объекты обмениваются сообщениями, изменяя при этом своё состояние.&#xA;Когда речь заходит о ФП, понятие состояния вообще неприменимо, вместо этого имеем дело с &amp;ldquo;чистым&amp;rdquo; преобразованием данных при помощи функций.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Галопом по ФП - Монады</title>
+      <link>http://localhost:1313/posts/some-of-functional-programming2/</link>
+      <pubDate>Thu, 12 Sep 2024 10:21:34 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/some-of-functional-programming2/</guid>
+      <description>&lt;p&gt;Долгое время я очень боялся писать хоть что-то про монады, в силу ряда причин:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Это сложное понятие из теории категорий&lt;/li&gt;&#xA;&lt;li&gt;Про это уже было множество статей, роликов заметок и т.д. и едва ли я скажу что-то новое.&lt;/li&gt;&#xA;&lt;li&gt;Все эти объяснения, по крайней пере сами по себе, практически не дали мне никакого внятного понимания.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Да, видимо есть что-то в монадах, что мешает объяснить их по простому, хотя бы для начального понимания.&#xA;При этом попытки объяснить часто начинаются вообще с разных подходов, нам говорят:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IoC контейнеры и Python</title>
+      <link>http://localhost:1313/posts/ioc-in-python/</link>
+      <pubDate>Mon, 02 Sep 2024 13:19:41 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/ioc-in-python/</guid>
+      <description>&lt;p&gt;При изучении OOП на Python, Inversion of Control (IoC) является одной важных тем, понимание которой позволяет писать хороший ООП код.&#xA;IoC это еще один из принципов, который выражает идею о том, что объекты не должны зависеть от конкретной реализации.&#xA;Если внутри класса создаётся конкретный экземпляр другого, то это явная зависимость &amp;ndash; теперь поведение класса зависит от этого объекта,&#xA;и его корректирование требует явного вмешательства в внутреннее устройство класса.&#xA;Это наружение классического ООП подхода - &amp;ldquo;программировать на уровне интерфейсов, а не реализации&amp;rdquo;.&#xA;Принцип IoC звучит очень обобщенно, при этом гораздо чаще говоря IoC подразумевается Dependency Injection (DI) &amp;ndash; классическое решение описанной выше проблемы.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Знакомство с Ассемблером</title>
+      <link>http://localhost:1313/posts/introduction-to-assembly/</link>
+      <pubDate>Fri, 23 Aug 2024 21:31:32 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/introduction-to-assembly/</guid>
+      <description>&lt;p&gt;Отвлечёмся ненадолго от функционального программирования.&lt;/p&gt;&#xA;&lt;p&gt;Какой самый низкий уровень, куда может &amp;ldquo;спуститься&amp;rdquo; программист?&lt;/p&gt;&#xA;&lt;p&gt;В современном мире у ассеблера остаётся место&#xA;для использования - обратный инжиниринг, точечная оптимизация в системном программировании (элементы операционных систем, драйвера и т.д.), хакинг.&#xA;Также это самый базовый уровень, на котором большинство программистов могут взаимодействовать с компьютером.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Галопом по ФП - Моноиды</title>
+      <link>http://localhost:1313/posts/some-of-functional-programming/</link>
+      <pubDate>Wed, 14 Aug 2024 09:53:07 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/some-of-functional-programming/</guid>
+      <description>&lt;p&gt;Абсолютно must-watch доклад по функциональному программированию от Скотта Влашина, владельца замечательного сайта &lt;a href=&#34;https://fsharpforfunandprofit.com&#34;&gt;F# for Fun and Profit&lt;/a&gt;, и автора многих важных книг по функцональному программированию, вроде &lt;a href=&#34;https://pragprog.com/titles/swdddf/domain-modeling-made-functional/&#34;&gt;# Domain Modeling Made Functional&lt;/a&gt; (увы, еще не читал).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Значение значений</title>
+      <link>http://localhost:1313/posts/value-of-values/</link>
+      <pubDate>Mon, 05 Aug 2024 09:39:11 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/value-of-values/</guid>
+      <description>&lt;p&gt;Ковыраяя различные ресурсы, посвещённые языку OCaml наткнулся на ролик с выступлением Ричарда Хикки,&#xA;создателя функционального языка &lt;a href=&#34;https://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.&#xA;Это выступление, на мой взгляд, концетрированная выжимка той критики, которую любители функционального&#xA;программирования обычно подвергают мейнстрим.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Выучить второй язык программирования</title>
+      <link>http://localhost:1313/posts/second-lang/</link>
+      <pubDate>Fri, 26 Jul 2024 09:27:11 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/second-lang/</guid>
+      <description>&lt;p&gt;В определенный момент времени ты понимаешь, что владеть&#xA;единственным языком программирования становится недостаточно, и приходит&#xA;осознание, что приша пора добавить что-то в свой репертуар.&lt;/p&gt;&#xA;&lt;p&gt;Остановился на &lt;a href=&#34;https://elixir-lang.org/&#34;&gt;Elixir&lt;/a&gt; - функциональный язык для разработки параллельных систем на основе виртуальной машины &lt;code&gt;Erlang&lt;/code&gt;.&#xA;Подходит для того, чем сейчас занимаюсь, из всей функциональщины хоть сколько нибудь популярный (ладно, еще &lt;code&gt;Scala&lt;/code&gt; есть)&#xA;и это тема в целом интересна.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Distrobox как инструмент разработчика</title>
+      <link>http://localhost:1313/posts/distrobox/</link>
+      <pubDate>Mon, 15 Jul 2024 18:08:56 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/distrobox/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://distrobox.it/&#34;&gt;&lt;strong&gt;Distrobox&lt;/strong&gt;&lt;/a&gt; - это opensource проект, по сути - большой набор shell-скриптов, который при помощи выбранного бэкэнда (docker, podman, с недавних пор еще &lt;a href=&#34;https://github.com/89luca89/lilipod&#34;&gt;lilipod&lt;/a&gt;) позволяет запускать контейнеры популярных Линукс дистрибутивов.&#xA;При этом мы получаем доступ к всему диапазону программных пакетов конкретного дистрибутива, и&#xA;сам контейнер близко интегрируются с нашей основной системой, позволяя легко пользоваться приложениями внутри контейнера.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nix Os</title>
+      <link>http://localhost:1313/posts/nix-os/</link>
+      <pubDate>Fri, 05 Jul 2024 16:51:38 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/nix-os/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://nixos.org/&#34;&gt;Nix&lt;/a&gt; - это в первую очередь пакетный менеджер, концепция которого строится вокруг декларативного подхода к управлению пакетами.&#xA;&lt;em&gt;кому интересна теория, можно почитать &lt;a href=&#34;https://web.archive.org/web/20190421081837/https://nixos.org/~eelco/pubs/iscsd-scm11-final.pdf&#34;&gt;здесь&lt;/a&gt;&lt;/em&gt;.&#xA;На текущий момент репозиторий языка занимает первое место по количеству доступных пакетов, обогнав даже знаменитый AUR.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Нам всё еще нужны циклы?</title>
+      <link>http://localhost:1313/posts/being-smart-about-loops/</link>
+      <pubDate>Tue, 25 Jun 2024 08:50:39 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/being-smart-about-loops/</guid>
+      <description>&lt;p&gt;Несмотря на то, что раньше в университетах было принято обучать людей CS начиная с какого-нибудь ФП и Лиспа,&#xA;большинство людей сегодня начинают знакомство с программированием с императивного стиля.&#xA;Представлять программу, как установленный набор последовательно выполняемых инструкций, это&#xA;наиболее базовый и понятный новичку подход к тому, чтобы заставить компьютер что-то делать.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Как быть продуктивным с Linux</title>
+      <link>http://localhost:1313/posts/linux-productivity/</link>
+      <pubDate>Fri, 14 Jun 2024 20:02:34 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/linux-productivity/</guid>
+      <description>&lt;p&gt;За долгие годы работы с компьютером многие люди вырабатывают собственный стиль работы, который&#xA;позволяет им быть эффективными, но в то же время большинство пользователей ПК часто просто не могут представить себе, что ежедневные задачи можно делать как-то по-другому.&#xA;Если смотря на экран коллег, вы видете как они печально передвигают мышкой, пытаясь серди десятка открытых окон найти нужное, вам возможно приходило в голову, что должен быть способ получше.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>F-ограниченный полиморфизм на Python</title>
+      <link>http://localhost:1313/posts/f-bounded-polymorphism/</link>
+      <pubDate>Tue, 04 Jun 2024 21:39:37 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/f-bounded-polymorphism/</guid>
+      <description>&lt;p&gt;Параметрический полиморфизм - это свойство языка, которое позволяет в некоторых ситуациях&#xA;выполнять один и тот же код для разных типов.&#xA;В &lt;code&gt;Python&lt;/code&gt; 3.12 ввели гораздо ввели гораздо более удобный синтаксис для выражения параметрического полифорфизма (т.е. удобную форму для дженериков).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Применяем функциональную композицию к ООП коду</title>
+      <link>http://localhost:1313/posts/do-oop-more-func/</link>
+      <pubDate>Thu, 23 May 2024 23:09:49 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/do-oop-more-func/</guid>
+      <description>&lt;p&gt;На настоящий день наиболее популярным стилем программирования на &lt;code&gt;Python&lt;/code&gt; будет являться ООП.&#xA;И это несмотря на то, что язык является мультипарадигмальным и поддерживает множество подходов к написанию программ.&#xA;Так, например, достаточно много средств стандартной библиотеке позволяют писать на &lt;code&gt;Python&lt;/code&gt; в вполне вполне функциональном стиле.&#xA;И также в последнее время появилось множество библиотек, для, например, реактивного подхода к программированию на &lt;code&gt;Python&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Об информационной избыточности</title>
+      <link>http://localhost:1313/posts/information-redandancy/</link>
+      <pubDate>Mon, 13 May 2024 21:52:43 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/information-redandancy/</guid>
+      <description>&lt;p&gt;Много лет назад ключевым походохом к хранению информации была эффективность с точки зрения оптимизации хранимого объема.&#xA;Нормализованные модели данных позволяют хранить данные в максимально эффективном виде,&#xA;также обновлять и поддерживать консистентность данных однако у этого подхода есть недостатки:&#xA;если наша модель достаточно сложная, на получение данных для визуализации могут понадобиться десятки JOIN&amp;rsquo;ов&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Как спроектировать долгосрочное API.</title>
+      <link>http://localhost:1313/posts/long-term-api/</link>
+      <pubDate>Thu, 02 May 2024 20:49:58 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/long-term-api/</guid>
+      <description>&lt;p&gt;Многие современные API сужествуют годами и вынуждены поддерживать обратную совместимость на протяжении десятков версий.&#xA;Одна из самых известных библиотек для линейной алгебры и прочих математических вычислений - NumPy сужествует с 2005 года&#xA;и с тех пор поддерживает постоянство в дизайне API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Группировка в программах</title>
+      <link>http://localhost:1313/posts/grouping-in-programs/</link>
+      <pubDate>Tue, 23 Apr 2024 22:26:52 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/grouping-in-programs/</guid>
+      <description>&lt;p&gt;Методы или функции, которые пишем в наших программах, очень часто имеют несколько логических частей.&#xA;Например, в рамках одной функции, если нам нужно отправить сообщение на сервер, мы можем 1) проверить его доступность, затем 2) отправить сообщение, и потом 3) проверить что сообщение было доставлено.&#xA;Но достаточно ли такой подход отвечает принципу &lt;strong&gt;единственной ответственности&lt;/strong&gt; SRP?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Дефункционализация, CPS и Pandas</title>
+      <link>http://localhost:1313/posts/defunc-cps-pandas/</link>
+      <pubDate>Sat, 13 Apr 2024 20:04:53 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/defunc-cps-pandas/</guid>
+      <description>&lt;h2 id=&#34;использование-apply-в-питоновской-библиотеке-pandas&#34;&gt;Использование apply в питоновской библиотеке Pandas&lt;/h2&gt;&#xA;&lt;p&gt;Типичное преобразование данных при работе с &lt;code&gt;Pandas&lt;/code&gt; зачастую выглядит следующим образом:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DataFrame({&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;City&amp;#39;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Moscow&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Stavropol&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Volgograd&amp;#39;&lt;/span&gt;],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Temperature (C)&amp;#39;&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;28&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;celsius_to_fahrenheit&lt;/span&gt;(c):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (c &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Temperature (F)&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Temperature (C)&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(celsius_to_fahrenheit)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;В целом, чаще всего мы просто ходим совершить некоторое преобразование данных в столбце (или создать новый) при помощи&#xA;какой-либо нашей функции, которая отражает ту или иную прикладную логику.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Timestamp вместо логических значений в БД</title>
+      <link>http://localhost:1313/posts/timestamp-vs-boolean/</link>
+      <pubDate>Tue, 02 Apr 2024 22:52:45 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/timestamp-vs-boolean/</guid>
+      <description>&lt;p&gt;Один из самых простых, и в то же время эффективных трюков, которые я узнал недавно, связан с хранением логических значений в базе данных.&#xA;Очень часто информация, для хранения которой мы должны использовать булевый столбец, тесно связана с информацией о том, когда это значение было изменено, даже если это не очевидно с первого взгляда:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Эффективная отладка</title>
+      <link>http://localhost:1313/posts/efficient-debugging/</link>
+      <pubDate>Sat, 23 Mar 2024 13:40:11 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/efficient-debugging/</guid>
+      <description>&lt;p&gt;Шутка про то, что программисты не всё-таки 100% времени проводят отлаживая код (иногда они еще создают новые баги) родилась совсем не на пустом месте. Значительную часть времени разработчики проводят, пытаясь отловить и исправить всевозможные ошибки в зачастую сложных и запутанных системах.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Удобство против возможностей</title>
+      <link>http://localhost:1313/posts/convenience-vs-features/</link>
+      <pubDate>Wed, 13 Mar 2024 21:04:00 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/convenience-vs-features/</guid>
+      <description>&lt;h2 id=&#34;простые-и-сложные-решения&#34;&gt;Простые и сложные решения&lt;/h2&gt;&#xA;&lt;p&gt;В мире программирования каждое техническое решение — это баланс между удобством сейчас и возможностями в будущем.&#xA;Это особенно очевидно на примере двух систем кодирования символов: ASCII и Unicode.&#xA;Их сравнение ярко демонстрирует, как выбор между текущим удобством и будущими возможностями может влиять на разработку программного обеспечения и обработку данных.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Эффективность Code Review: Как Достичь Максимума</title>
+      <link>http://localhost:1313/posts/code-review/</link>
+      <pubDate>Tue, 27 Feb 2024 22:22:34 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/code-review/</guid>
+      <description>&lt;h2 id=&#34;введение&#34;&gt;Введение&lt;/h2&gt;&#xA;&lt;p&gt;В мире разработки ПО, code review является неотъемлемым процессом обеспечения качества кода.&#xA;Несмотря на то, что во многих организациях ревью кода проводятся несистематически и чаще всего в критические моменты или при необходимости значительных обновлений,&#xA;важность установления регулярности и формализации этого процесса неоспорима.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Изучая язык C в 2024. Часть 1</title>
+      <link>http://localhost:1313/posts/learning-c-lang-1/</link>
+      <pubDate>Tue, 20 Feb 2024 22:31:05 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/learning-c-lang-1/</guid>
+      <description>&lt;h2 id=&#34;введение&#34;&gt;Введение&lt;/h2&gt;&#xA;&lt;p&gt;Вероятно, каждого программиста на скриптовых &lt;del&gt;ненастоящих&lt;/del&gt; языках программирования рано или поздно снедает чувство неполноценности.&lt;/p&gt;&#xA;&lt;p&gt;Данный материал, вероятно, будет скучным для того, кто давно пишет программы на Си, или изучал его в университете.&#xA;Но также мне кажется, что среди людей, чей путь в программировании начался с &lt;strong&gt;JavaScript&lt;/strong&gt; или &lt;strong&gt;Python&lt;/strong&gt; (а может и с &lt;strong&gt;Java&lt;/strong&gt;),&#xA;кто-то, так же как и я, воможно испытывает интерес к тому, как все устроено там, внизу, гораздо ближе к реальной кремниевой машине.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Clickhouse Tricks 3</title>
+      <link>http://localhost:1313/posts/clickhouse-tricks-3/</link>
+      <pubDate>Fri, 02 Feb 2024 23:16:32 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/clickhouse-tricks-3/</guid>
+      <description>&lt;h1 id=&#34;менее-известные-особенности-clickhouse-часть-3&#34;&gt;Менее известные особенности Clickhouse. Часть 3&lt;/h1&gt;&#xA;&lt;p&gt;В этом посте, остановимся на рассмотрении того, как использовать &lt;code&gt;JOIN&lt;/code&gt;ы в Кликхаусе.&lt;/p&gt;&#xA;&lt;h2 id=&#34;синтаксис&#34;&gt;Синтаксис&lt;/h2&gt;&#xA;&lt;p&gt;Поддерживается стандарнтый набор джойнов: LEFT, RIGHT, CROSS. В этом плане у &lt;code&gt;Clickhouse&lt;/code&gt; нет отличий от классических SQL БД. Таже поддерживается использование нескольких ключей в &lt;code&gt;ON&lt;/code&gt; или &lt;code&gt;OR&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Менее известные особенности Clickhouse. Часть 2</title>
+      <link>http://localhost:1313/posts/clickhouse-tricks-2/</link>
+      <pubDate>Wed, 24 Jan 2024 18:31:41 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/clickhouse-tricks-2/</guid>
+      <description>&lt;h1 id=&#34;менее-известные-особенности-clickhouse-часть-2&#34;&gt;Менее известные особенности Clickhouse. Часть 2&lt;/h1&gt;&#xA;&lt;h2 id=&#34;составные-агрегационные-функции&#34;&gt;Составные агрегационные функции&lt;/h2&gt;&#xA;&lt;p&gt;Агрегационные функции в &lt;code&gt;Clickhouse&lt;/code&gt; можно расширять суффиксами, которые меняют поведение этой функции.&lt;/p&gt;&#xA;&lt;p&gt;Классический пример, суффикс &lt;code&gt;-If&lt;/code&gt;, позволяет учитывать в агрегационной функции только значения, соответствующие условию:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Менее известные особенности Clickhouse. Часть 1</title>
-      <link>https://xenokrat.github.io/posts/clickhouse-tricks-1/</link>
-      <pubDate>Wed, 27 Dec 2023 21:10:23 +0300</pubDate>
-      <guid>https://xenokrat.github.io/posts/clickhouse-tricks-1/</guid>
-      <description>Менее известные особенности Clickhouse Clickhouse - аналитическая (OLAP) СУБД, главной особенностью которой является подход к хранению данных в виде колонок.&#xA;В отдельных случаях может быть в десятки и даже сотни раз быстрее, чем традиционные SQL-БД.</description>
+      <link>http://localhost:1313/posts/clickhouse-tricks-1/</link>
+      <pubDate>Wed, 27 Dec 2023 21:10:23 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/clickhouse-tricks-1/</guid>
+      <description>&lt;h1 id=&#34;менее-известные-особенности-clickhouse&#34;&gt;Менее известные особенности Clickhouse&lt;/h1&gt;&#xA;&lt;p&gt;&lt;code&gt;Clickhouse&lt;/code&gt; - аналитическая (OLAP) СУБД, главной особенностью которой является подход к хранению данных в виде колонок.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;В отдельных случаях может быть в десятки и даже сотни раз быстрее, чем традиционные SQL-БД.&lt;/li&gt;&#xA;&lt;li&gt;SQL синтаксис для выполнения запросов. На текущий момент поддерживает большинство типичных операций.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;В данном цикле статей мы рассмотрим некоторые особенности &lt;code&gt;Clickhouse&lt;/code&gt;, которые в чем то отличают его от других баз данных и. Экосистема &lt;code&gt;Clickhouse&lt;/code&gt; развивается уже значительное время, и успела обрасти различными особенностями и возможностями, которые могут быть неочевидны для людей, привыкших к традиционным SQL-ориентированным БД, таким как &lt;code&gt;PostgreSQL&lt;/code&gt;. Возможно, эта информация сделает жизнь аналитиков и инженеров данных немного проще.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

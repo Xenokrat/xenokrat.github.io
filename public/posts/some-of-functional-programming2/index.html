@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Галопом по ФП - Монады - </title>
+
+  <meta name="description" content="Долгое время я очень боялся писать хоть что-то про монады, в силу ряда причин:
+
+Это сложное понятие из теории категорий
+Про это уже было множество статей, роликов заметок и т.д. и едва ли я скажу что-то новое.
+Все эти объяснения, по крайней пере сами по себе, практически не дали мне никакого внятного понимания.
+
+Да, видимо есть что-то в монадах, что мешает объяснить их по простому, хотя бы для начального понимания.
+При этом попытки объяснить часто начинаются вообще с разных подходов, нам говорят:">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/some-of-functional-programming2\/",
+          "name": "Галопом по фп монады"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Галопом по ФП - Монады",
+  "description" : "Долгое время я очень боялся писать хоть что-то про монады, в силу ряда причин:\nЭто сложное понятие из теории категорий Про это уже было множество статей, роликов заметок и т.д. и едва ли я скажу что-то новое. Все эти объяснения, по крайней пере сами по себе, практически не дали мне никакого внятного понимания. Да, видимо есть что-то в монадах, что мешает объяснить их по простому, хотя бы для начального понимания. При этом попытки объяснить часто начинаются вообще с разных подходов, нам говорят:\n",
+  "inLanguage" : "en",
+  "wordCount":  832 ,
+  "datePublished" : "2024-09-12T10:21:34\u002b03:00",
+  "dateModified" : "2024-09-12T10:21:34\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/some-of-functional-programming2\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Галопом по ФП - Монады" />
+<meta property="og:description" content="Долгое время я очень боялся писать хоть что-то про монады, в силу ряда причин:
+
+Это сложное понятие из теории категорий
+Про это уже было множество статей, роликов заметок и т.д. и едва ли я скажу что-то новое.
+Все эти объяснения, по крайней пере сами по себе, практически не дали мне никакого внятного понимания.
+
+Да, видимо есть что-то в монадах, что мешает объяснить их по простому, хотя бы для начального понимания.
+При этом попытки объяснить часто начинаются вообще с разных подходов, нам говорят:">
+<meta property="og:url" content="http://localhost:1313/posts/some-of-functional-programming2/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Галопом по ФП - Монады" />
+  <meta name="twitter:description" content="Долгое время я очень боялся писать хоть что-то про монады, в силу ряда причин:
+
+Это сложное понятие из теории категорий
+Про это уже было множество статей, роликов заметок и т.д. и едва ли я скажу …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Галопом по ФП - Монады</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Долгое время я очень боялся писать хоть что-то про монады, в силу ряда причин:</p>
+<ul>
+<li>Это сложное понятие из теории категорий</li>
+<li>Про это уже было множество статей, роликов заметок и т.д. и едва ли я скажу что-то новое.</li>
+<li>Все эти объяснения, по крайней пере сами по себе, практически не дали мне никакого внятного понимания.</li>
+</ul>
+<p>Да, видимо есть что-то в монадах, что мешает объяснить их по простому, хотя бы для начального понимания.
+При этом попытки объяснить часто начинаются вообще с разных подходов, нам говорят:</p>
+<ul>
+<li>Монада &ndash; это то, что реализует операцию <code>flatMap</code>.</li>
+<li>Монада &ndash; это <strong>моноид</strong> в категории эндофункторов (это фраза уже превратилась в мем).</li>
+<li>Монада &ndash; это составной тип, который определяет 2 операции: <code>return</code> (или <code>unit</code>) и <code>bind</code>
+(монадический биндинг, также обозначается символом &raquo;=).</li>
+<li>Монада &ndash; это буррито (самозаворачивающееся и саморазворачивающееся :)).</li>
+</ul>
+<p>И всё таки есть несколько моментов, которые заставляют меня попробовать всё же
+подступиться к этому термину с разных сторон, покружить вокруг в надежде, что с нескольких
+заходов можно хотя бы подступиться к правде:</p>
+<ul>
+<li>Монады полезны, и часто делают жизнь программиста легче.</li>
+<li>Некоторые известные типы-монады не слишком сложны в понимании (например <code>Option</code>, она же <code>Maybe</code>).</li>
+<li>Многие наверняка уже сталкивались с ними, или даже писали их, возможно даже не представляя, что это и есть монады.</li>
+</ul>
+<p>Так что да, данное объяснение ни на что особо не претендует, кроме может быть &ldquo;мягкого&rdquo; введения в тему,
+да и найти объяснения мы попробуем из разных источников.</p>
+<p>замечательный доклад Скотта Влашина, где он в том числе упоминает и Монады.</p>
+<p>Там предлагается понимать их как цепочки продолжений:</p>
+<p><img src="monads.png" alt="monad as continuation"></p>
+<p>в этом смысле Монада создаёт второй параллельный поток при выполнении цепочки операций,
+где, например, может возникнуть проблема (исключение). Когда поток вычислений сходит с рельсов на
+красный маршрут, следующий этап выполнения просто передаст дальше что вычисления не завершились
+успехом, и нам не нужно как-то отдельно обрабатывать каждый этап.</p>
+<p>Таким образом, мы решаем проблему так называемой &ldquo;пирамиды судьбы&rdquo; (pyramid of doom), когда на каждом этапе
+выполнения операций нам нужен новый <code>if</code> для проверки того, не закончилась ли она плохо,
+и эти &ldquo;ифы&rdquo; очень быстро накапливаются, превращаясь в своего рода треугольник.
+Здесь же начинает играть роль смежный, так называемый &ldquo;голливудский принцип&rdquo;: не звоните нам, мы сами
+позвоним. Это значит, что хорошо бы, чтобы функция не &ldquo;решала сама&rdquo;, что ей делать в случае
+тех же исключений (это еще и нарушение принципа SRP), но вместо этого это мог сделать
+программист &ldquo;снаружи&rdquo;.</p>
+<p>Всё эти принципы легко могут быть реализованы при помощи монады <code>Option</code> (чуть ниже мы посмотрим,
+как она рабтает).</p>
+<p>Монада &ndash; это составной тип, т.е. тип который может включать в себя значения других типов.
+Т.е. это функтор, но обычный функтор реализует функцию <code>map</code>, которая позволяет &ldquo;извлечь&rdquo; значение
+из &ldquo;коробочки&rdquo; типа, произвести над ним действия, и положить обратно внутрь <strong>той же коробочки</strong>.</p>
+<p>Так вот, монада &ndash; это это более мощный функтор, так как он реализует <code>flatMap</code>.
+Обе эти операции очень схожи, но их главное отличие, что <code>map</code> принимает функцию, которая
+преобразует данные без изменения функтора, в котором он &ldquo;лежит&rdquo;, а <code>flatMap</code>
+принимает функцию, которая возвращает значение, упакованное в &ldquo;новый&rdquo; функтор:</p>
+<p>Например:</p>
+<ul>
+<li>map: (int -&gt; int)</li>
+<li>flatMap: (int -&gt; Some int)</li>
+</ul>
+<p>Так как монады это еще и моноиды, они обладают всеми их особенностями: помните как работает
+flatMap в то же JS? На определённом этапе мы преобразуем отдельные элементы в списки,
+он затем они всё равно &ldquo;раскрываются&rdquo; или &ldquo;складываются&rdquo; до единого списка. Это свойство
+аппликативности. Также Монады наследуют все преимущества моноидов, как например легкость
+распараллеливания, составление из значений цепочек операций и т.д.</p>
+<p>И да, <code>flatMap</code> и <code>bind</code> это абсолютно одно и то же.</p>
+<p>Посмотрим теперь на монаду <code>Option</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#75715e">(* Здесь мы впервые упаковываем значение в монаду, если это требуется  *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> return v <span style="color:#f92672">=</span> <span style="color:#a6e22e">Some</span> <span style="color:#f92672">(</span>v<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">(* Здесь мы применяем функцию f к значению, и возвращаем
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   либо &#34;что-то&#34; Some (f v), либо ничего None  *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> bind f opt <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">match</span> opt <span style="color:#66d9ef">with</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">|</span> <span style="color:#a6e22e">Some</span> v <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Some</span> <span style="color:#f92672">(</span>f v<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">|</span> <span style="color:#a6e22e">None</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">(* И так можно выстраивать цепочки действий, на любом этапе
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   все эти doSmth могут вернуть либо Some (v), либо, при неудаче None
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   Монада позволяет тянуть эти значения дальше до конца за счёт собственного устройства *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> example input <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>	doSmth input
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">|&gt;</span> bind doSmthElse
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">|&gt;</span> bind doThird
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">|&gt;</span> bind <span style="color:#f92672">(</span><span style="color:#66d9ef">fun</span> z <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Some</span> z<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Ещё монады &ndash; это один из немногих способов реализации побочных эффектов в чисто-функциональных ЯП,
+вроде Haskell.
+Всё дело в том, что побочный эффект может быть своего рода &ldquo;встроен&rdquo; в тип,
+а спусковым крючком для его выполнения будет &ldquo;упаковка&rdquo; значения в &ldquo;обертку&rdquo; в виде монады,
+при выполнении операции <code>bind</code> (скажем, &ldquo;при каждой &ldquo;упаковке в процессе обработки ответа от сервера
+можно запиши в лог результат&rdquo;, или как мы рассмотрели выше, также можно управлять побочными эффектами
+в виде исключений).
+Таким образом, выполнение побочных эффектов &ldquo;скрыто&rdquo; от прямого
+использования программистом, но вместо этого элегантно привязано к потоку вычисления функций.</p>
+<p>Надеюсь, эта заметка показала, что даже с неполным пониманием всех особенностей понятия Монад,
+это всё ещё мощный инструмент в руках программиста, который вполне можно использовать
+там, где это логично и удобно. Мы только  коснулись этой темы, и думаю поверхностно
+мы к ней ещё вернемся в следующих постах.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/ioc-in-python/" data-toggle="tooltip" data-placement="top" title="IoC контейнеры и Python">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/oop-fp-similarity/" data-toggle="tooltip" data-placement="top" title="Схожеcть принципов в ООП и ФП">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

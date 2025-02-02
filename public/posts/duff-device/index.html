@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Устройство Даффа - </title>
+
+  <meta name="description" content="Те, кто интересуется системными языками вроде C и C&#43;&#43; обычно рано или поздно натыкаются на так называемый
+&ldquo;Метод Даффа&rdquo; (Duff&rsquo;s Device). Его идея в общем заключается в ускорении работы циклов
+при помощи трюка, который, вероятно, сильно удивит пользователей современных языков программирования.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/duff-device\/",
+          "name": "Устройство даффа"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Устройство Даффа",
+  "description" : "Те, кто интересуется системными языками вроде C и C\u002b\u002b обычно рано или поздно натыкаются на так называемый \u0026ldquo;Метод Даффа\u0026rdquo; (Duff\u0026rsquo;s Device). Его идея в общем заключается в ускорении работы циклов при помощи трюка, который, вероятно, сильно удивит пользователей современных языков программирования.\n",
+  "inLanguage" : "en",
+  "wordCount":  787 ,
+  "datePublished" : "2024-10-31T15:09:19\u002b03:00",
+  "dateModified" : "2024-10-31T15:09:19\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/duff-device\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Устройство Даффа" />
+<meta property="og:description" content="Те, кто интересуется системными языками вроде C и C&#43;&#43; обычно рано или поздно натыкаются на так называемый
+&ldquo;Метод Даффа&rdquo; (Duff&rsquo;s Device). Его идея в общем заключается в ускорении работы циклов
+при помощи трюка, который, вероятно, сильно удивит пользователей современных языков программирования.">
+<meta property="og:url" content="http://localhost:1313/posts/duff-device/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Устройство Даффа" />
+  <meta name="twitter:description" content="Те, кто интересуется системными языками вроде C и C&#43;&#43; обычно рано или поздно натыкаются на так называемый
+&ldquo;Метод Даффа&rdquo; (Duff&rsquo;s Device). Его идея в общем заключается в ускорении …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Устройство Даффа</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Те, кто интересуется системными языками вроде <code>C</code> и <code>C++</code> обычно рано или поздно натыкаются на так называемый
+&ldquo;Метод Даффа&rdquo; (<em>Duff&rsquo;s Device</em>). Его идея в общем заключается в ускорении работы циклов
+при помощи трюка, который, вероятно, сильно удивит пользователей современных языков программирования.</p>
+<p>Такой трюк достаточно нормален для программистов на ассемблере, и ещё один лишний пример того,
+что на low-level уровне программирования можно выжать из железа больше.</p>
+<p>Попробую объяснить максимально просто.</p>
+<p>Я немного упростил код, чтобы не отвлекаться на особенности синтаксиса <code>C</code>.
+С &ldquo;нормальной&rdquo; версией можно ознакомиться на <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%94%D0%B0%D1%84%D1%84%D0%B0">википедии</a></p>
+<p>Допустим, нам нужен цикл, чтобы повторить (например, копирование значений куда-то) определённую операцию n-ное число раз.
+Типичная реализация такого цикла будет выглядеть примерно так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">register</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>; <span style="color:#75715e">/* любая цифра числа итераций, но больше 0 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {                 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* КАКАЯ-ТО ОПЕРАЦИЯ; */</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (<span style="color:#f92672">--</span>count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><p>Для большинства программистов с этим кодом нет никаких проблем, и на самом деле так и есть.
+Но что если нам не хватает производительности и хочется итерироваться быстрее?</p>
+<p>Дело в том, что операция сравнения, определяющая условие цикла, в терминах машинного кода довольно &ldquo;медленная&rdquo;
+и для ускорения проводить её следует как можно реже. Как это сделать? Можно увеличить количество операций в теле цикла, скажем, до 8
+(цифра 8 особо ничем не обусловлена, это число может быть как больше, так и меньше):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">register</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">register</span> n <span style="color:#f92672">=</span> count <span style="color:#f92672">/</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (<span style="color:#f92672">--</span>n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><p>Такой код будет проверять условие цикла <code>while</code> в 8 раз реже, что даст выигрыш в производительности по сравнению с предыдущим,
+однако возникает проблема: что если число итераций не кратно 8? Как быть с остатком?</p>
+<p>Тут то нам и пригодится Метода Даффа (сама техника изобретена не Даффом, и была известна до этого ассемблер-программистам, но
+ему принадлежит это выражение на языке <code>C</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">register</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">register</span> n <span style="color:#f92672">=</span> (count <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (count <span style="color:#f92672">%</span> <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">do</span> { <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>      <span style="color:#75715e">/* ОПЕРАЦИЯ; */</span>
+</span></span><span style="display:flex;"><span>           } <span style="color:#66d9ef">while</span> (<span style="color:#f92672">--</span>n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Выглядит страшно, но попробуем разобраться.
+Да, кусок конструкции <code>switch-case</code> находится прямо внутри цикла, причём не целиком (<code>case 0:</code> остался снаружи).
+Тут оказывается, что синтаксис <code>C</code> не запрещает нам &ldquo;прыгнуть&rdquo; к любой инструкции в теле цикла, например с помощью <code>goto</code>
+(так как цикл представляет собой набор инструкций с <code>jmp</code>-условием, которое проверяет, следует ли его продолжать).
+Теперь разберёмся с <code>switch-case</code>: каждый <code>case</code> это по сути просто лейбл
+(а <code>switch-case</code> в целом более ограниченный и контролируемый вариант использования <code>goto лебл</code>).
+Еще одна фишка <code>case</code> в том, что прыгнув на нужный <code>case</code> и не встретив <code>break</code> мы проваливаемся дальше по следующим <code>case'ам</code>, пока конструкция
+не закончится или всё-таки не возникнет <code>break</code>.</p>
+<p>Теперь с этим знанием попробуем проследить, как работает эта конструкция для, например, <code>count = 19</code>:</p>
+<ul>
+<li>переменная <code>n = (19 + 7) / 8 = 3</code> (целочисленное деление).</li>
+<li>в <code>switch</code>: <code>19 % 8 = 3</code>, переходим к <code>case 3:</code></li>
+<li>после <code>case 3:</code> нужная операция воспроизведётся 3 раза (это мы сразу разобрались с остатком от деления числа циклов на 8).</li>
+<li>далее мы оказываемся в обычном цикле <code>do-while</code>, <code>case</code> нам никак не мешает и ничего больше не делает, и мы спокойно &ldquo;проваливается&rdquo; сквозь.</li>
+<li>цилк повторится по числу <code>n</code> 2 раза, что добавит нам <code>8 * 2 = 16</code>.</li>
+<li>Итого: получаем <code>16 + 3 = 19</code> выполнений операций, столько сколько нам нужно, и всего за 2 цикла (с кусочком), т.е. всего за 2 проверки условия цикла.</li>
+</ul>
+<p>На сегодняшний день метод Даффа используют редко, он смущает компилятор, мешая ему проводить разного рода оптимизации кода (прекрасно понимаю его).
+В отдельных случаях он также может приводить к замедлению работы кода и увеличению размера исполняемого файла (см. статью на вики)
+(не забываем также <a href="https://users.ece.utexas.edu/~adnan/pike.html">второе правило программирования</a> Роба Пайка).
+Чуть более &ldquo;нормальный&rdquo; вариант этого же подхода - использовать 2 цикла: один для &ldquo;больших шагов по +/-8 операций за раз&rdquo; плюс цикл для завершения остатков.</p>
+<p>Но что больше всего меня поражает в этой</p>
+<p>Потому что это буквально &ldquo;хак&rdquo; на уровне языка.
+Просто для контраста по сравнению с современными высокоуровневыми языками с их классами, функторами и
+виртуальными машинами, примитивная и первобытная сила <code>C</code> ощущается совсем иначе.
+Язык C в каком-то смысле абсолютно &ldquo;поломанный&rdquo; по сравнению с тем что ЯП предлагают сегодня, при этом его естественное состояние.
+За долгие годы никто (к счастью) кардинально не &ldquo;&ldquo;&ldquo;улучшил&rdquo;&rdquo;&rdquo; Си, он почти такой же, как и 40 лет назад.
+Но, в том числе поэтому нельзя избавиться от ощущения насколько близко находится &ldquo;реальное железо&rdquo; при работе с <code>C</code>, и насколько
+по настоящему можно управлять компьютером на нём.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/python-hoare-triplets/" data-toggle="tooltip" data-placement="top" title="Логика Хоара и Динамическая типизация">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/more-on-hoare-logic/" data-toggle="tooltip" data-placement="top" title="More on Hoare Logic">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Трюки в программировании in small - </title>
+
+  <meta name="description" content="Говоря о программировании, его часто разделяют
+на уровни: &ldquo;programming in the large&rdquo; и  &ldquo;programming in the small&rdquo;
+(есть конечно искушение перевести их как &ldquo;программирование по-большому&rdquo; и &ldquo;по-маленькому&rdquo;, но пожалуй, не стоит).">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/small-tricks\/",
+          "name": "Трюки в программировании in small"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Трюки в программировании in small",
+  "description" : "Говоря о программировании, его часто разделяют на уровни: \u0026ldquo;programming in the large\u0026rdquo; и \u0026ldquo;programming in the small\u0026rdquo; (есть конечно искушение перевести их как \u0026ldquo;программирование по-большому\u0026rdquo; и \u0026ldquo;по-маленькому\u0026rdquo;, но пожалуй, не стоит).\n",
+  "inLanguage" : "en",
+  "wordCount":  423 ,
+  "datePublished" : "2024-11-20T21:41:18\u002b03:00",
+  "dateModified" : "2024-11-20T21:41:18\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/small-tricks\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Трюки в программировании in small" />
+<meta property="og:description" content="Говоря о программировании, его часто разделяют
+на уровни: &ldquo;programming in the large&rdquo; и  &ldquo;programming in the small&rdquo;
+(есть конечно искушение перевести их как &ldquo;программирование по-большому&rdquo; и &ldquo;по-маленькому&rdquo;, но пожалуй, не стоит).">
+<meta property="og:url" content="http://localhost:1313/posts/small-tricks/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Трюки в программировании in small" />
+  <meta name="twitter:description" content="Говоря о программировании, его часто разделяют
+на уровни: &ldquo;programming in the large&rdquo; и  &ldquo;programming in the small&rdquo;
+(есть конечно искушение перевести их как …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Трюки в программировании in small</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Говоря о программировании, его часто разделяют
+на уровни: &ldquo;programming in the large&rdquo; и  &ldquo;programming in the small&rdquo;
+(есть конечно искушение перевести их как &ldquo;программирование по-большому&rdquo; и &ldquo;по-маленькому&rdquo;, но пожалуй, не стоит).</p>
+<p>Первое - это соответственно уровень дизайна, архитектуры и больших
+единиц программ, вроде модулей и библиотек.
+Второй - гораздо ближе к нам, это непосредстенно код, функции,
+выражения, переменные и т.д.</p>
+<p>Новички часто фокусируются на &ldquo;in small&rdquo; первое время, что, логично и правильно.
+Большинство программ начинающих фокусируются на единственной задаче уровень
+архитектуры не особенно и нужен. Но при переходе от простых скриптов к приложениям дизайн начинает играть всё большую роль, и приходится волей-неволей задумываться об отношениях объектов и подсистем в проекте.</p>
+<p>Акценты немного смещаются, но <code>in-small</code> то от нас никуда не делся,
+вот он тут всё еще пока мы размышляем о высоких материях, реальную работу
+выполняет код - функции/методы, выражения и т.п.</p>
+<p>Одна из главных прелестей программирования в том, что в 99% случаем ошибаться простительно.
+Серьёзно, нет другой области где к ошибкам относились бы также снисходительно
+<del>пока работодателю это не стоит слишком много денег</del>, а для научения
+чему угодно один из лучших путей это действие-ошибка-корректировка.</p>
+<p>Поэтому в повседневной <code>in small</code> практике такая схема до боли знакома нам:</p>
+<ul>
+<li>написать код.</li>
+<li>получить удар под дых от ошибки краша, забыл-изменить-параметр-в-другом-месте</li>
+<li>подумать и сделать получше, а еще круче так, чтобы сделать такую ошибку невозможной.</li>
+</ul>
+<p>Набив шишки заметно, что у многих акцент смещается в пользу так называемого
+<a href="https://en.wikipedia.org/wiki/Defensive_programming">defensive programming</a>.
+Заранее признав склонность человека (себя в первую очередь) к ошибкам,
+начинаешь подозревать что расставлять везде <code>assert</code>ы идея совсем не плохая.</p>
+<p>Пример: допустим, есть у нас функция с кучей параметров, перепутать порядок аргументов
+в такой ситуации проще простого:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">connect</span>(db_name, user, password, host, port): <span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>Подстраховать себя можно, соединив это с использованием словаря:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>conn_creds <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;db_name&#34;</span>: st<span style="color:#f92672">.</span>DB_NAME,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;user&#34;</span>: st<span style="color:#f92672">.</span>DB_USER,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;password&#34;</span>: st<span style="color:#f92672">.</span>DB_PASSWORD,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;host&#34;</span>: st<span style="color:#f92672">.</span>DB_HOST,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;port&#34;</span>: st<span style="color:#f92672">.</span>DB_PORT,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>conn <span style="color:#f92672">=</span> connect(<span style="color:#f92672">**</span>conn_creds)
+</span></span></code></pre></div><p>Зайдя ещё чуть дальше, в <code>Python</code> можно даже сделать
+вызов функции <code>keyword-only</code> полностью:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">connect</span>(<span style="color:#f92672">*</span>, db_name, user, password, host, port): <span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>Такой подход гарантирует корректный вызов (или сразу <code>KeyError</code> если
+мы напортачили с параметрами).
+Без этого хорошо если неверный порядок приведёт к скорой ошибке, а не к
+неожиданному и непонятному поведению - отловить такое потом чертовски сложно.</p>
+<p>С опытом у многих накапливается целый арсенал таких &ldquo;трюков&rdquo;, позволяющих
+сделать код попросту более надежным, дать немного стабильных гарантий,
+или хотя бы подстелить соломку. А дав программе надежности <code>in small</code> гораздо проще размышлять о ней <code>in large</code>, меньше беспокоясь о мелких деталях.
+И мне кажется, приобрести такой набор можно только методом проб и ошибок, иначе наш мозг просто не прочувствует всю необходимость такого подхода.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/more-on-hoare-logic/" data-toggle="tooltip" data-placement="top" title="More on Hoare Logic">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/strange-of-c/" data-toggle="tooltip" data-placement="top" title="Такой странный Си">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

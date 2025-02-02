@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Функциональное программирование и Roc - </title>
+
+  <meta name="description" content="Использованием приёмов из функционального репертуара уже давно никого не удивишь -
+использование различных map, reduce и filter очень распространено. А писать как можно больше &ldquo;чистых функций&rdquo; рекомендуется
+повсеместно. И всё же даже используются такие вот функциональные паттерны опыт написания программ на привычном JavaScript или Python
+заметно отличается от &ldquo;чистых&rdquo; языков программирования - я практически могу гарантировать, что &ldquo;функциональный код&rdquo; на Python скорее
+всего будет по большей части императивным.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/roclang\/",
+          "name": "Функциональное программирование и roc"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Функциональное программирование и Roc",
+  "description" : "Использованием приёмов из функционального репертуара уже давно никого не удивишь - использование различных map, reduce и filter очень распространено. А писать как можно больше \u0026ldquo;чистых функций\u0026rdquo; рекомендуется повсеместно. И всё же даже используются такие вот функциональные паттерны опыт написания программ на привычном JavaScript или Python заметно отличается от \u0026ldquo;чистых\u0026rdquo; языков программирования - я практически могу гарантировать, что \u0026ldquo;функциональный код\u0026rdquo; на Python скорее всего будет по большей части императивным.\n",
+  "inLanguage" : "en",
+  "wordCount":  427 ,
+  "datePublished" : "2025-01-24T15:16:17\u002b03:00",
+  "dateModified" : "2025-01-24T15:16:17\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/roclang\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Функциональное программирование и Roc" />
+<meta property="og:description" content="Использованием приёмов из функционального репертуара уже давно никого не удивишь -
+использование различных map, reduce и filter очень распространено. А писать как можно больше &ldquo;чистых функций&rdquo; рекомендуется
+повсеместно. И всё же даже используются такие вот функциональные паттерны опыт написания программ на привычном JavaScript или Python
+заметно отличается от &ldquo;чистых&rdquo; языков программирования - я практически могу гарантировать, что &ldquo;функциональный код&rdquo; на Python скорее
+всего будет по большей части императивным.">
+<meta property="og:url" content="http://localhost:1313/posts/roclang/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Функциональное программирование и Roc" />
+  <meta name="twitter:description" content="Использованием приёмов из функционального репертуара уже давно никого не удивишь -
+использование различных map, reduce и filter очень распространено. А писать как можно больше &ldquo;чистых …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Функциональное программирование и Roc</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Использованием приёмов из функционального репертуара уже давно никого не удивишь -
+использование различных <code>map</code>, <code>reduce</code> и <code>filter</code> очень распространено. А писать как можно больше &ldquo;чистых функций&rdquo; рекомендуется
+повсеместно. И всё же даже используются такие вот функциональные паттерны опыт написания программ на привычном JavaScript или Python
+заметно отличается от &ldquo;чистых&rdquo; языков программирования - я практически могу гарантировать, что &ldquo;функциональный код&rdquo; на Python скорее
+всего будет по большей части императивным.</p>
+<p><code>F#</code> и <code>Ocaml</code> - разумеется, function-first языки, но всё равно допускают некоторые поблажки относительно императивного кода,
+а кроме того довольно большие и сложные в освоении.
+<code>Haskell</code> - пожалуй самый известный из чистых ФП языков, также печально известен своей сложностью и не самым удобным набором инструментов.</p>
+<p>Но вот появился относительно свежий язык - <a href="https://www.roc-lang.org/">Roc</a>, который обещает все преимущества функционального программирования (со статической типизацией при этом),
+сохраняя доступность и относительную простоту.</p>
+<p>Явный источник вдохновения - <a href="https://elm-lang.org/">Elm</a>, ведь создатель <code>Roc</code>, Ричард Фельдман, один из контрибьютеров <code>Elm</code>.
+Однако последний явно заточен под frontend-использования, а Ричард хотел разработать язык такой же приятный в использовании как <code>Elm</code>,
+но при этом подходящий для Backend разработки, или создания CLI-инструментов.</p>
+<p>А вот второй источник вдохновения - это как ни странно, <code>Golang</code>. <code>Roc</code> - пытается быть &ldquo;чистым&rdquo; функциональным языком, ориентируясь при этом на простоту, удобство и скорость <code>Go</code>.
+Т.е. это очень компактный синтаксис, встроенные &ldquo;из коробки&rdquo; инструменты, скорость компиляции.</p>
+<p><code>Roc</code> на текущий день, как мне кажется - это самый быстрый способ испытать опыт программирования ФП,
+практически ничто не отвлекает от того, чтобы сразу начать писать код, который будет делать &ldquo;что-то&rdquo; (вывод в консоль например), а не просто делать отвлечённую математику.</p>
+<p>Походит ли <code>Roc</code> в качестве первого функционального языка? Не уверен, вероятно лучше всё же начать с ФП-приёмов в каком-нибудь более популярном ЯП, познакомиться
+с основными идеями функционального программирования, и затем испытать силы в написании чего-то тривиального на <code>Roc</code>. Потому что хотя бы без примерного понимания
+лямбда-функций и монад (хотя бы интуитивного) будет непросто понять как через Task&rsquo;и работают IO-операции в <code>Roc</code>.</p>
+<p>Явный недостаток на текущий момент - явная молодость и незавершенность языка - многие текущие инструменты
+планируется переработать (со временем откажутся от взаимодействия с IO при помощи Task&rsquo;ов, планируется также добавить немного &ldquo;императивного&rdquo; сахара вроде for-loop
+конструкций, но при этом не затрагивая функциональную основу языка). Например, посередине
+написания игрушечного парсера логов я обнаружил что в нём нет встроенных регулярок - &ldquo;крутить&rdquo; строки одними <code>split</code> функциями сомнительное удовольствие.
+Также ошибки от компилятора часто дают мало информации для понимания того, что же пошло не та</p>
+<p>Но для того, чтобы почувствовать опыт разработки на &ldquo;чистом&rdquo; ФП-языке <code>Roc</code> подходит практически идеально - синтаксис можно освоить за пару дней
+и сразу приступить к разработке.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/useful-caps/" data-toggle="tooltip" data-placement="top" title="Небесполезный Caps Lock">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/about-tdd/" data-toggle="tooltip" data-placement="top" title="Я не понимаю TDD">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

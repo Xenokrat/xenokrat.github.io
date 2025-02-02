@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Применяем функциональную композицию к ООП коду - </title>
+
+  <meta name="description" content="На настоящий день наиболее популярным стилем программирования на Python будет являться ООП.
+И это несмотря на то, что язык является мультипарадигмальным и поддерживает множество подходов к написанию программ.
+Так, например, достаточно много средств стандартной библиотеке позволяют писать на Python в вполне вполне функциональном стиле.
+И также в последнее время появилось множество библиотек, для, например, реактивного подхода к программированию на Python.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/do-oop-more-func\/",
+          "name": "Применяем функциональную композицию к ооп коду"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "Применяем функциональную композицию к ООП коду",
+  "description" : "На настоящий день наиболее популярным стилем программирования на Python будет являться ООП. И это несмотря на то, что язык является мультипарадигмальным и поддерживает множество подходов к написанию программ. Так, например, достаточно много средств стандартной библиотеке позволяют писать на Python в вполне вполне функциональном стиле. И также в последнее время появилось множество библиотек, для, например, реактивного подхода к программированию на Python.\n",
+  "inLanguage" : "en",
+  "wordCount":  583 ,
+  "datePublished" : "2024-05-23T23:09:49\u002b03:00",
+  "dateModified" : "2024-05-23T23:09:49\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/do-oop-more-func\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Применяем функциональную композицию к ООП коду" />
+<meta property="og:description" content="На настоящий день наиболее популярным стилем программирования на Python будет являться ООП.
+И это несмотря на то, что язык является мультипарадигмальным и поддерживает множество подходов к написанию программ.
+Так, например, достаточно много средств стандартной библиотеке позволяют писать на Python в вполне вполне функциональном стиле.
+И также в последнее время появилось множество библиотек, для, например, реактивного подхода к программированию на Python.">
+<meta property="og:url" content="http://localhost:1313/posts/do-oop-more-func/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="Применяем функциональную композицию к ООП коду" />
+  <meta name="twitter:description" content="На настоящий день наиболее популярным стилем программирования на Python будет являться ООП.
+И это несмотря на то, что язык является мультипарадигмальным и поддерживает множество подходов к написанию …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Применяем функциональную композицию к ООП коду</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>На настоящий день наиболее популярным стилем программирования на <code>Python</code> будет являться ООП.
+И это несмотря на то, что язык является мультипарадигмальным и поддерживает множество подходов к написанию программ.
+Так, например, достаточно много средств стандартной библиотеке позволяют писать на <code>Python</code> в вполне вполне функциональном стиле.
+И также в последнее время появилось множество библиотек, для, например, реактивного подхода к программированию на <code>Python</code>.</p>
+<p>И все же в большинстве случаев мы имеем дело с типичным ООП похдодом к написанию программ
+(несмотря даже на то, что для языка с динамической типизацией, многие типичные для ООП концепции, такие как полиморфизм подтипов, не обеспечиваются при &ldquo;компиляции&rdquo; программы).</p>
+<p>Рассмотрим следующий пример:</p>
+<p>Допустим, мы имеем класс, который расчитывает данные по наиболее близким по расстоянию строкам.
+Один из методов этого класса сохраняет результат в DataFrame (библиотека pandas).
+Если подумать, этот метод противоречит принципу SRP, так как сохранение результата в какой-то формат это уже отдельная задача и потенциально этих форматов может быть множество.
+Кроме того, можно рассмотреть ситуацию, когда нам дальше нужно использовать этот результат и сохранить его в файл.</p>
+<p>Типичным решением для ООП ориентированных языков, таких как <code>Java</code> будет создать отдельный класс, реализующий сохранение данных в DataFrame.
+Если мы также думаем, что вариантов сохранения может быть множество, разумно будет создать абстрактный класс, и наследовать от него реализации.</p>
+<p>Следующим шагом, который может возникнуть будет сохранение этого DataFrame&rsquo;а в какой-то файловый формат, например .csv.
+И снова здесь нам понадобиться создавать отдельную иерархию классов (так как сохранение в DataFrame достаточно отличается от сохранения в файл, и чтобы соблюсти SRP,
+нам следует разделить эти дейсвтия).</p>
+<p>Таким образом, наш код быстро увеличивается в размерах и сложности, а нам всего лишь нужно было перевести данные в DataFrame и сохранить их в .csv файл.</p>
+<p>Однако функции в <code>Python</code> вполне себе хорошо существуют и отдельно от классов, почему бы нам на вынести действия с данными отдельно &ldquo;наружу&rdquo;?
+Затем, мы можем легко &ldquo;состыковать&rdquo; результат первого дейстивя, передав его далее в качестве агрумента для следующего преобразования данных.
+Для реализации этого как раз хоршо подойдет функциональная композиция.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LSC</span>(DataHandler):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">to_dataframe</span>(self):
+</span></span><span style="display:flex;"><span>        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;client_sku&#39;</span>: self<span style="color:#f92672">.</span>client_sku,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;base_sku&#39;</span>: self<span style="color:#f92672">.</span>base_sku,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;common_string&#39;</span>: self<span style="color:#f92672">.</span>common_string
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>        res_grp <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;client_sku&#39;</span>, as_index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>agg({<span style="color:#e6db74">&#39;common_string&#39;</span>: self<span style="color:#f92672">.</span>max_len_str})
+</span></span><span style="display:flex;"><span>        res <span style="color:#f92672">=</span> res_grp<span style="color:#f92672">.</span>merge(df, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;inner&#39;</span>, on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;client_sku&#39;</span>, <span style="color:#e6db74">&#39;common_string&#39;</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res
+</span></span></code></pre></div><p>Преобразуем в:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">datahander_res_to_dataframe</span>(dh: DataHander) <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>DataFrame:
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;client_sku&#39;</span>   : dh<span style="color:#f92672">.</span>client_sku,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;base_sku&#39;</span>     : dh<span style="color:#f92672">.</span>base_sku,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;common_string&#39;</span>: dh<span style="color:#f92672">.</span>common_string
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    res_grp <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;client_sku&#39;</span>, as_index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>agg({<span style="color:#e6db74">&#39;common_string&#39;</span>: dh<span style="color:#f92672">.</span>max_len_str})
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> res_grp<span style="color:#f92672">.</span>merge(df, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;inner&#39;</span>, on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;client_sku&#39;</span>, <span style="color:#e6db74">&#39;common_string&#39;</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> res
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dataframe_to_csv</span>(path: str, df: pd<span style="color:#f92672">.</span>DataFrame) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span>to_csv(path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Пример вызова
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dataframe_to_csv(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;res.csv&#34;</span>,
+</span></span><span style="display:flex;"><span>    datahander_res_to_dataframe(lsc_handler),
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Общая идея заключается в том, что мы выносим части логики работы программы:</p>
+<ul>
+<li>которые автономны от остальных частей класса.</li>
+<li>могут меняться часто.</li>
+</ul>
+<p>в отдельные функции, для которых легко передавать результат от одной к следующей, т.е &ldquo;состыковать&rdquo; их друг с другом -
+применив функциональную композицию.</p>
+<p>Описанный подход позволяет сократить значительно объём кода,
+сделав операции, которые не совсем укладываются в SRP основного класса,
+не создавая при этом большие нагромождения иерархий новых классов.
+При этом мы:</p>
+<ul>
+<li>избегаем прегруженности класса методами, напрямую не относящимся к его обязанностям (соблюдаем SRP).</li>
+<li>делаем зависимости более простыми, читаемыми и понятными.</li>
+<li>явно выражаем логику действий.</li>
+</ul>
+<p>В большинстве случаев это имеет куда больший смысл,
+когда предполагаемые действия достаточно просты и не подразумевают больших вариаций.</p>
+<p>Кроме того, таким образом код выглядит гораздо читабельнее,
+ведь композиция из 2-3 функций довольно легко воспринимается,
+в отличие от случая, когда мы используем несколько классов в составе композиции другого класса.</p>
+<p>В целом, этот подход наверное более &ldquo;ленивый&rdquo;, чем корректная композиция из нужных классов,
+однако если нам нужно всего лишь добавить некоторые несложные операции,
+которые не входят в обязанности класса, мы выигрываем значитльно в простоте и читаемости итоговой программы.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/information-redandancy/" data-toggle="tooltip" data-placement="top" title="Об информационной избыточности">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/f-bounded-polymorphism/" data-toggle="tooltip" data-placement="top" title="F-ограниченный полиморфизм на Python">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>NoSQL в Clickhouse - </title>
+
+  <meta name="description" content="Clickhouse колоночная база данных, это значит что данные в ней хранятся не как строки, а именно буквально как колонки
+(можно увидеть как каждая таблица физически разделяет данные на файлы по колонкам).
+Эта особенность отличает Clickhouse от классических SQL баз данных вроде PosgreSQL и MySQL.">
+  <meta name="author" content="Павел Барабанов"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Мой блог про IT, ML и прочее",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/clickhouse-nosql\/",
+          "name": "No SQL в clickhouse"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Павел Барабанов"
+  },
+  "headline": "NoSQL в Clickhouse",
+  "description" : "Clickhouse колоночная база данных, это значит что данные в ней хранятся не как строки, а именно буквально как колонки (можно увидеть как каждая таблица физически разделяет данные на файлы по колонкам). Эта особенность отличает Clickhouse от классических SQL баз данных вроде PosgreSQL и MySQL.\n",
+  "inLanguage" : "en",
+  "wordCount":  438 ,
+  "datePublished" : "2024-12-20T15:36:46\u002b03:00",
+  "dateModified" : "2024-12-20T15:36:46\u002b03:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/clickhouse-nosql\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="NoSQL в Clickhouse" />
+<meta property="og:description" content="Clickhouse колоночная база данных, это значит что данные в ней хранятся не как строки, а именно буквально как колонки
+(можно увидеть как каждая таблица физически разделяет данные на файлы по колонкам).
+Эта особенность отличает Clickhouse от классических SQL баз данных вроде PosgreSQL и MySQL.">
+<meta property="og:url" content="http://localhost:1313/posts/clickhouse-nosql/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Мой блог про IT, ML и прочее" />
+
+  <meta name="twitter:title" content="NoSQL в Clickhouse" />
+  <meta name="twitter:description" content="Clickhouse колоночная база данных, это значит что данные в ней хранятся не как строки, а именно буквально как колонки
+(можно увидеть как каждая таблица физически разделяет данные на файлы по …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.141.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Мой блог про IT, ML и прочее"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>NoSQL в Clickhouse</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Clickhouse колоночная база данных, это значит что данные в ней хранятся не как строки, а именно буквально как колонки
+(можно увидеть как каждая таблица физически разделяет данные на файлы по колонкам).
+Эта особенность отличает Clickhouse от классических SQL баз данных вроде PosgreSQL и MySQL.</p>
+<p>Но в то же время отличия от Clickhouse от них не так уж существенны, особенно на первый взгляд:
+Фактически, изменив концепцию хранения данных, поменяв местами строки с коломаками, мы остались всё с теми же таблицами.
+Поэтому в Clickhouse используется SQL-подобный язык, который на 90% совпадает с диалектами традиционных реляционных СУБД.</p>
+<p>При этом Кликхаус не так уж сильно похож на другие NoSQL решения, вроде MongoDB, где для хранения данных используются пары ключ-значения,
+представляющие собой что-то вроде JSON структуры.</p>
+<p>Так что же, не вдаваясь в подробности внутренней реализации, можно думать о Clickhouse как о быстрой SQL базе данных, только без транзакций
+(что-то вроде Timescale в PosgreSQL)?</p>
+<p>Но всё-таки есть некоторые возможности Кликхауса (они, честно говоря, не на поверхности), которые заставляют задуматься о нем не как о табличной SQL бд).</p>
+<p>Одна из таких особенностей - это <a href="https://clickhouse.com/docs/ru/sql-reference/data-types/nested-data-structures/nested"><code>Nested</code></a> структуры.</p>
+<p>Этот тип данных представляет собой вложенную таблицу.
+В отличие от, например, хранения JSON данных в PosgreSQL эта таблица будет first-class структурой, т.е. поддерживать все операции, что и
+обычные таблицы. Также судя по всему эти данные также хранятся как точно так же, как и основные данные, в виде столбцов.
+Что ещё удивительнее, поддерживается больше одного уровня вложенности (как экспериментальная фича) хотя большой вопрос насколько это практично.</p>
+<p>Одина эта единственная фича сильно отдаляет Кликхаус от традиционных SQL СУБД, и гораздо больше напоминает вышеупомянутые структуры key-value,
+где ключом будет значение в nested столбце, который ссылается на данные-таблицу.</p>
+<p>Стоит также отметить, что судя по всему эта фича ещё довольно экспериментальная.
+Вставка в такие таблицы, с точки зрения документации достаточно загадочное действие:
+Предполагается, что вставлять в такие таблицы нужно из JSON-объектов, но вот беда - в моей текущей версии
+Кликхауса они не поддерживаются даже как экспериментальная функция.</p>
+<p>После долгих страданий, всё же удалось найти решение - мы используем тип данных <code>Map</code>, который чем-то схож с JSON,
+однако поддерживает значения только одного типа. Обойти это ограничение можно, храня значения в <code>String</code> и преобразовывая перед непосредственной
+вставкой обратно в их родной тип (решение, вероятно, не очень по эффективности, зато рабочее).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span>    
+</span></span><span style="display:flex;"><span>    _src_category_agg <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>            groupArray(<span style="color:#66d9ef">map</span>(
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;category_id&#39;</span>  , toString(category_id),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;category_text&#39;</span>, category_text
+</span></span><span style="display:flex;"><span>            )) <span style="color:#66d9ef">AS</span> nested_data
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">FROM</span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>    arrayMap(x <span style="color:#f92672">-&gt;</span> toUInt64(x[<span style="color:#e6db74">&#39;category_id&#39;</span>]), nested_data) <span style="color:#66d9ef">AS</span> category_ids,
+</span></span><span style="display:flex;"><span>    arrayMap(x <span style="color:#f92672">-&gt;</span> x[<span style="color:#e6db74">&#39;category_text&#39;</span>]        , nested_data) <span style="color:#66d9ef">AS</span> category_texts,
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> 
+</span></span><span style="display:flex;"><span>    _src_category_agg
+</span></span></code></pre></div><p>Сейчас можно предположить, что несмотря на внешнюю кажимость SQL базой данных, Clickhouse вероятно будет развивать
+NoSQL особенности, представляя собой своего рода гибрид между типичными реляционными БД и разного рода альтернативными решениями хранения данных.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/memoization/" data-toggle="tooltip" data-placement="top" title="Хак для изучения новых языков программирования">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/smalltalk-oop/" data-toggle="tooltip" data-placement="top" title="&#34;Забытый стиль ООП в Smalltalk&#34;">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:barabanovpv95@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/Xenokrat" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Павел Барабанов
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Мой блог про IT, ML и прочее</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.141.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
