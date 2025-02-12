@@ -173,6 +173,48 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="http://localhost:1313/posts/second-lang/">
+        <h2 class="post-title">Выучить второй язык программирования</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 26, 2024
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Павел Барабанов
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>В определенный момент времени ты понимаешь, что владеть
+единственным языком программирования становится недостаточно, и приходит
+осознание, что приша пора добавить что-то в свой репертуар.</p>
+<p>Остановился на <a href="https://elixir-lang.org/">Elixir</a> - функциональный язык для разработки параллельных систем на основе виртуальной машины <code>Erlang</code>.
+Подходит для того, чем сейчас занимаюсь, из всей функциональщины хоть сколько нибудь популярный (ладно, еще <code>Scala</code> есть)
+и это тема в целом интересна.</p>
+        <a href="http://localhost:1313/posts/second-lang/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="http://localhost:1313/posts/distrobox/">
         <h2 class="post-title">Distrobox как инструмент разработчика</h2>
         
@@ -519,57 +561,6 @@
 Например, в рамках одной функции, если нам нужно отправить сообщение на сервер, мы можем 1) проверить его доступность, затем 2) отправить сообщение, и потом 3) проверить что сообщение было доставлено.
 Но достаточно ли такой подход отвечает принципу <strong>единственной ответственности</strong> SRP?</p>
         <a href="http://localhost:1313/posts/grouping-in-programs/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="http://localhost:1313/posts/defunc-cps-pandas/">
-        <h2 class="post-title">Дефункционализация, CPS и Pandas</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 13, 2024
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Павел Барабанов
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h2 id="использование-apply-в-питоновской-библиотеке-pandas">Использование apply в питоновской библиотеке Pandas</h2>
-<p>Типичное преобразование данных при работе с <code>Pandas</code> зачастую выглядит следующим образом:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;City&#39;</span>: [<span style="color:#e6db74">&#39;Moscow&#39;</span>, <span style="color:#e6db74">&#39;Stavropol&#39;</span>, <span style="color:#e6db74">&#39;Volgograd&#39;</span>],
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Temperature (C)&#39;</span>: [<span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">18</span>]
-</span></span><span style="display:flex;"><span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">celsius_to_fahrenheit</span>(c):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (c <span style="color:#f92672">*</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">/</span><span style="color:#ae81ff">5</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">32</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Temperature (F)&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;Temperature (C)&#39;</span>]<span style="color:#f92672">.</span>apply(celsius_to_fahrenheit)
-</span></span></code></pre></div><p>В целом, чаще всего мы просто ходим совершить некоторое преобразование данных в столбце (или создать новый) при помощи
-какой-либо нашей функции, которая отражает ту или иную прикладную логику.</p>
-        <a href="http://localhost:1313/posts/defunc-cps-pandas/" class="post-read-more">[Read More]</a>
         
     </div>
 

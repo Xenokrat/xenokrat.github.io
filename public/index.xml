@@ -8,8 +8,15 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Sun, 02 Feb 2025 12:38:42 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2025 19:12:59 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Мини-обзор на Cursor - редактор кода с AI</title>
+      <link>http://localhost:1313/posts/cursor-editor-review/</link>
+      <pubDate>Wed, 12 Feb 2025 19:12:59 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/cursor-editor-review/</guid>
+      <description>&lt;p&gt;В силу некоторых причин, я недавно отказался от подписки на OpenAI.&#xA;И освободившиеся средства было решено потратить на &lt;code&gt;Cursor&lt;/code&gt; - клон &lt;code&gt;VSCode&lt;/code&gt; с тесной интеграцией с AI &amp;ldquo;из коробки&amp;rdquo;.&#xA;До этого в основном использование AI ограничивалось обычным чатом с &lt;code&gt;ChatGPT&lt;/code&gt; или подгрузкой небольших файлов в &lt;code&gt;GhatGTP&lt;/code&gt; проекты.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Я не понимаю TDD</title>
       <link>http://localhost:1313/posts/about-tdd/</link>
