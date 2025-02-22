@@ -8,8 +8,15 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Wed, 12 Feb 2025 19:12:59 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 17:30:01 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ещё один взгляд на TDD</title>
+      <link>http://localhost:1313/posts/new-angle-tdd/</link>
+      <pubDate>Fri, 21 Feb 2025 17:30:01 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/new-angle-tdd/</guid>
+      <description>&lt;p&gt;Недавно в небольшом посте про &lt;a href=&#34;http://localhost:1313/posts/about-tdd/&#34;&gt;TDD&lt;/a&gt; я жаловался&#xA;на то, что этот подход к написанию программ сводит на нет креативностью&#xA;в подходе к &amp;ldquo;исследованию&amp;rdquo; проблемы.&lt;/p&gt;&#xA;&lt;p&gt;Но при этом меня не покидало ощущение, что я недопонимаю что-то важное в&#xA;подходе TDD. Мой предыдующий опыт знакомства с TDD был связан с&#xA;&amp;ldquo;Python: Разработка на основе тестирования&amp;rdquo; Гарри Персиваля, а также нескольких&#xA;други отдельных постов о TDD.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Мини-обзор на Cursor - редактор кода с AI</title>
       <link>http://localhost:1313/posts/cursor-editor-review/</link>
