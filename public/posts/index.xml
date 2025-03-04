@@ -8,8 +8,15 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Fri, 21 Feb 2025 17:30:01 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 04 Mar 2025 19:21:15 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Свободные Монады</title>
+      <link>http://localhost:1313/posts/free-monad/</link>
+      <pubDate>Tue, 04 Mar 2025 19:21:15 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/free-monad/</guid>
+      <description>&lt;p&gt;Несмотря на то, что я в основном разрабатывают программы на языке Python, некоторые понятия&#xA;из функционального программирования всё равно на слуху - одно из них это монады.&#xA;Монады фундаментальны для функциональных ЯП, особенно для языков вроде &lt;code&gt;Haskell&lt;/code&gt;, для которых&#xA;не допускают &amp;ldquo;не чистых&amp;rdquo; функций, поэтому монада - это единственный способ выражения и работы с состоянием.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Ещё один взгляд на TDD</title>
       <link>http://localhost:1313/posts/new-angle-tdd/</link>
