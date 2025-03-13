@@ -8,8 +8,15 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Tue, 04 Mar 2025 19:21:15 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 13 Mar 2025 15:38:31 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Проблемы с вставкой в Clickhouse</title>
+      <link>http://localhost:1313/posts/clickhouse-insert-issue/</link>
+      <pubDate>Thu, 13 Mar 2025 15:38:31 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/clickhouse-insert-issue/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Clickhouse&lt;/code&gt; одна из самых крутых вещёй, с которыми я сталкивался в IT.&#xA;Невероятно быстрая OLAP база данных, которая отлично работает как в облаке&#xA;(есть решения через &lt;code&gt;AWS&lt;/code&gt;), так и локально в составе одного единственного бинарника,&#xA;который можно легко запустить из CLI.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Свободные Монады</title>
       <link>http://localhost:1313/posts/free-monad/</link>
