@@ -8,8 +8,15 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Thu, 13 Mar 2025 15:38:31 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 23 Mar 2025 18:58:36 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Вайб-кодинг на Cursor</title>
+      <link>http://localhost:1313/posts/cursor-vibe/</link>
+      <pubDate>Sun, 23 Mar 2025 18:58:36 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/cursor-vibe/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B9%D0%B1-%D0%BA%D0%BE%D0%B4%D0%B8%D0%BD%D0%B3&#34;&gt;&lt;code&gt;Vibe coding&lt;/code&gt;&lt;/a&gt; это новая ужасная/потрясающая тенденция в разработке.&#xA;По сути люди без опыта в разработке собирают при помощи ИИ помощников полноценные коммерческие приложения и продают их пользователям за реальные деньги.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Проблемы с вставкой в Clickhouse</title>
       <link>http://localhost:1313/posts/clickhouse-insert-issue/</link>
