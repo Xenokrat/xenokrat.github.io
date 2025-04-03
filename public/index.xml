@@ -8,8 +8,15 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Sun, 23 Mar 2025 18:58:36 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 03 Apr 2025 16:21:10 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gnome и вы</title>
+      <link>http://localhost:1313/posts/gnome-and-you/</link>
+      <pubDate>Thu, 03 Apr 2025 16:21:10 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/gnome-and-you/</guid>
+      <description>&lt;p&gt;GNOME - один из двух &amp;ldquo;главных&amp;rdquo; десктопов (DE) на Linux, вместе с KDE.&#xA;Для многих дистрибутивов он же &amp;ldquo;дефолтный&amp;rdquo; рабочиё стол (Ubunty, Fedora) хотя опять-таки, многие из них&#xA;не вносят определенные изменнения (Ubuntu яркий пример), поэтому это не совсем тот Gnome, каким он задуман разработчиками.&#xA;После долгих лет скитаний по Linux десктопам сейчас он стал моим основным - начал с GNOME, на нем и закончил (на текущий момент :)).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Вайб-кодинг на Cursor</title>
       <link>http://localhost:1313/posts/cursor-vibe/</link>
