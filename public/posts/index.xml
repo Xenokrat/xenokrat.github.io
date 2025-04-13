@@ -8,14 +8,21 @@
     <language>ru-ru</language>
     <managingEditor>barabanovpv95@gmail.com (Павел Барабанов)</managingEditor>
     <webMaster>barabanovpv95@gmail.com (Павел Барабанов)</webMaster>
-    <lastBuildDate>Thu, 03 Apr 2025 16:21:10 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 13 Apr 2025 15:43:11 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gnome и вы</title>
+      <title>Oop Rant</title>
+      <link>http://localhost:1313/posts/oop-rant/</link>
+      <pubDate>Sun, 13 Apr 2025 15:43:11 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
+      <guid>http://localhost:1313/posts/oop-rant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GNOME и вы</title>
       <link>http://localhost:1313/posts/gnome-and-you/</link>
       <pubDate>Thu, 03 Apr 2025 16:21:10 +0300</pubDate><author>barabanovpv95@gmail.com (Павел Барабанов)</author>
       <guid>http://localhost:1313/posts/gnome-and-you/</guid>
-      <description>&lt;p&gt;GNOME - один из двух &amp;ldquo;главных&amp;rdquo; десктопов (DE) на Linux, вместе с KDE.&#xA;Для многих дистрибутивов он же &amp;ldquo;дефолтный&amp;rdquo; рабочиё стол (Ubunty, Fedora) хотя опять-таки, многие из них&#xA;не вносят определенные изменнения (Ubuntu яркий пример), поэтому это не совсем тот Gnome, каким он задуман разработчиками.&#xA;После долгих лет скитаний по Linux десктопам сейчас он стал моим основным - начал с GNOME, на нем и закончил (на текущий момент :)).&lt;/p&gt;</description>
+      <description>&lt;p&gt;GNOME - один из двух &amp;ldquo;главных&amp;rdquo; десктопов (DE) на Linux, вместе с KDE.&#xA;Для многих дистрибутивов он же &amp;ldquo;дефолтный&amp;rdquo; рабочий стол (Ubunty, Fedora) хотя опять-таки, многие из них&#xA;не вносят определенные изменнения (Ubuntu яркий пример), поэтому это не совсем тот GNOME, каким он задуман разработчиками.&#xA;После долгих лет скитаний по Linux десктопам сейчас он стал моим основным - начал с GNOME, на нем и закончил (на текущий момент :)).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Вайб-кодинг на Cursor</title>
